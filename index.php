@@ -22,9 +22,9 @@
 	</main>
 	
 	<footer>
-		<div></div>
-		<div></div>
-		<div></div>
+		<div>element1</div>
+		<div>element2</div>
+		<div>element3</div>
 	</footer>
 <body>
 </body>

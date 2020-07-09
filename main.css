@@ -44,6 +44,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #A2D3FF;
+}
+
 header h1{
 	position: absolute;
 	text-align: center;
@@ -89,5 +93,11 @@ header h2{
 
 footer{
 	display: flex;
-	flex-wrap: wrap;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+footer div{
+	width: 100%;
+	text-align: center;
 }
