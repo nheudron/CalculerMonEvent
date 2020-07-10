@@ -6,12 +6,8 @@
 <title>Calculer mon Evenement</title>
 </head>
 	
-<?php include("db_connexion.php");
-	session_start();
-	?>
-	
 	<header>
-		<h1>calculermonevenement.com</h1>
+		<h1><a href="index.php">calculermonevenement.com</a></h1>
 		<h2>En moins de 5 minutes </h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" class="imghead" alt="budget evenement">
 	</header>

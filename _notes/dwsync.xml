@@ -4,7 +4,10 @@
 <file name="db_connexion.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388579430673967" remote="132388507200000000" Dst="2" />
 <file name="main.css" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388432600661839" remote="132388360200000000" Dst="2" />
 <file name="index.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132387842566359841" remote="132387770400000000" Dst="2" />
-<file name="form.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388582504232784" remote="132388510200000000" Dst="2" />
-<file name="formProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388581856296597" remote="132388509600000000" Dst="2" />
-<file name="form2.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388573875131230" remote="132388501800000000" Dst="2" />
+<file name="form.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388674794781507" remote="132388602600000000" Dst="2" />
+<file name="formProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388590403647988" remote="132388518000000000" Dst="2" />
+<file name="form2.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388683752281045" remote="132388611600000000" Dst="2" />
+<file name="delAccount.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388674803687695" remote="132388602600000000" Dst="2" />
+<file name="delProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388674392509094" remote="132388602000000000" Dst="2" />
+<file name="form2Process.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388684093972580" remote="132388611600000000" Dst="2" />
 </dwsync>

@@ -1,5 +1,4 @@
 <?php include("db_connexion.php");
-	session_start();
 
 	createUser();
 
@@ -13,20 +12,24 @@
 		}
 
 		if ($Requestok == 1) {
-			$email = $_POST["email"];
 			$result = $db->prepare('INSERT INTO user(name, surname, company, email, phone) VALUES (:name, :surname, :company, :email, :phone)');
 			$result->execute(array(
 				'name'=>$_POST["name"],
 				'surname'=>$_POST["surname"],
 				'company'=>$_POST["company"],
-				'email'=>$email,
+				'email'=>$_POST["email"],
 				'phone'=>$_POST["phone"]
 			));
 			echo 'Les données ont été ajoutées.';
+			createSession();
 			header("Location: form2.php");
 		}else{
 			header("Location: form.php");
 		}
 	}
 
+	function createSession(){ //start session
+		session_start();
+		$_SESSION["email"] = $_POST["email"];
+	}
 ?>
