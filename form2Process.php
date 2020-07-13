@@ -2,42 +2,37 @@
 	include("db_connexion.php");
 
 	session_start();
-		$_SESSION["email"];
-		$_SESSION["user_id"];
 
-	if (isset($_POST["email"])) {
+	if (isset($_SESSION["email"])) {
 		createEvent();//create the event
 		header("Location: form3.php");
 	}else{
 		header("Location: form.php");
 	}
 
-		
-	
 	function createEvent(){
 		global $db;
 		
-			$result2 = $db->prepare('INSERT INTO event(adults, children, start, end, date, place) VALUES (:adults, :children, :start, :end, :date, :place)');
+			$result2 = $db->prepare('INSERT INTO event(adults, children, start, end, type, place, user_id) VALUES (:adults, :children, :start, :end, :type, :place, :user_id)');
 			$result2->execute(array(
-				'adults'=>htmlspecialchars($_POST["name"]),
-				'children'=>htmlspecialchars($_POST["surname"]),
-				'start'=>htmlspecialchars($_POST["company"]),
-				'end'=>$_POST["email"],
-				'date'=>htmlspecialchars($_POST["phone"]),
-				'place'=>$_POST["phone"]
+				'adults'=>$_POST["adults"],
+				'children'=>$_POST["children"],
+				'start'=>$_POST["from"],
+				'end'=>$_POST["to"],
+				'type'=>$_POST["type"],
+				'place'=>$_POST["place"],
+				'user_id'=>$_SESSION["user_id"]
 			));
-			echo 'Les données ont été ajoutées.';
-			createSession();
+			//addEvent_idToSESSION();
 			$result2->closeCursor();
 	}
 
-	function addEventIDtoSESSION(){
-		session_start();
+	function addEvent_idToSESSION(){
 		global $db;
-		$result3 = $db->prepare('SELECT * FROM user WHERE email = ? AND company = ?');
-		$result3->execute(array($_POST["email"], $_POST["company"]));
-		$data = $result3->fetch();
+		$result1 = $db->prepare('SELECT * FROM event WHERE ');
+		$result1->execute(array());
+		$data = $result1->fetch();
 		$_SESSION["event_id"] = $data["id"];
-		$result3->closeCursor();
+		$result1->closeCursor();
 	}
 ?>

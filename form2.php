@@ -21,9 +21,11 @@
 	<main>
 		<form id="formEvent" style="formColumn" method="post" action="form2Process.php">
 			<h3>Dates</h3>
-			<label for="du">du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required><label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required><br>
+			<label for="du">du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required>
+			<label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required><br>
 			<h3>Nombre de personnes</h3>
-			<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required><label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
+			<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required>
+			<label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
 			<label for="lieu">Lieu</label><br>
 			<select name="place" id="lieu">
 				<option value="" disabled>Sélectionnez une option</option>
@@ -32,7 +34,7 @@
 				<option value="Province">Province</option>
 			</select><br><br>
 			<label for="type">Type d'événement</label><br>
-			<select name="place" id="type">
+			<select name="type" id="type">
 				<option value="" disabled>Sélectionnez une option</option>
 				<option value="Séminaire">Séminaire</option>
 				<option value="Gala">Gala</option>
