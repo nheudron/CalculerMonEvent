@@ -13,7 +13,7 @@
 	?>
 <body>	
 	<header>
-		<h1><a href="index.php">calculermonevenement.com</a></h1>
+		<h1><a href="#" id="title">calculermonevenement.com</a></h1>
 		<h2>En moins de 5 minutes</h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement" >
 	</header>
@@ -126,6 +126,19 @@ check['enfants'] = function(id) {
 		}
     });
 })();
+	
+	/*var title = document.getElementById('title');
+	
+	title.addEventListener('click', function(e){
+								if(confirm('Vous etes sur le point d\'abandonner l\'estimation budgétaire de votre événement')){
+									e.preventDefault;
+								}else{
+									function RedirectionJavascript(){
+  										document.location.href="index.php"; 
+									}
+								}
+						   });*/
+	
 </script>
 </body>
 </html>
