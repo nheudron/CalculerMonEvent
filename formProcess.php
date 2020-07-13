@@ -1,4 +1,5 @@
-<?php include("db_connexion.php");
+<?php 
+	include("db_connexion.php");
 	if (isset($_POST["email"])) {
 		$result1 = $db->prepare('SELECT * FROM user WHERE email = ? AND company = ?');
 		$result1->execute(array($_POST["email"], $_POST["company"]));
