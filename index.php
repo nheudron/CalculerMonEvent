@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="main.css">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
 </head>
 	
