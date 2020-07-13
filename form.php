@@ -10,24 +10,22 @@
 	<header>
 		<h1><a href="index.php">calculermonevenement.com</a></h1>
 		<h2>En moins de 5 minutes </h2>
-		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" class="imghead" alt="budget evenement">
+		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement">
 	</header>
 	
 	<main>
 		<form id="formUser" style="formColumn" method="post" action="formProcess.php">
 			<label for="nom">Nom</label><br><input type="text" name="name" id="nom"><br>
 			<label for="prenom">Prénom</label><br><input type="text" name="surname" id="prenom"><br>
-			<label for="entreprise">Société *</label><br><input type="text" name="company" id="entreprise"><br>
-			<label for="entreprise">email *</label><br><input type="email" name="email" id="email"><br>
+			<label for="entreprise">Société *</label><br><input type="text" name="company" id="entreprise" required><br>
+			<label for="entreprise">email *</label><br><input type="email" name="email" id="email" required><br>
 			<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone"><br>
-			<p>* champs obligatoires</p>
+			<p class="note">* champs obligatoires</p>
 			<input type="submit" value="Suivant"/>
 		</form>
 	</main>
 	
 <script>
-
-	
 var check = {};
 	
 check['nom'] = function(id) {
@@ -134,14 +132,8 @@ check['email'] = function(id) {
         }else{
 			e.preventDefault();
 		}
-
-        
-
     });
-
-
 })();
-
 </script>
 </body>
 </html>

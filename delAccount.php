@@ -11,7 +11,7 @@
 	<header>
 		<h1><a href="index.php">calculermonevenement.com</a></h1>
 		<h2>Supprimer vos données</h2>
-		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" class="imghead" alt="budget evenement">
+		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement">
 	</header>
 	
 	<main>
