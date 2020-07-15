@@ -10,10 +10,11 @@
 <?php 
 	include("db_connexion.php");
 	session_start();
+	if (isset($_SESSION["email"])){
 	?>
 	
 	<header>
-		<h1><a href="index.php">calculermonevenement.com</a></h1>
+		<h1><a href="index.php">calculermonevenement.fr</a></h1>
 		<h2>En moins de 5 minutes </h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement">
 	</header>
@@ -25,7 +26,10 @@
 			<a href="emailsent.php"><button>Envoyer l'email</button></a>
 		</div>
 	</main>
-
+	<?php 
+	}else{
+		header("Location: form.php");
+	}?>
 <body>
 </body>
 </html>

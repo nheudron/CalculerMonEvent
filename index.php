@@ -12,7 +12,7 @@
 <?php include("db_connexion.php")?>
 	
 	<header>
-		<h1>calculermonevenement.com</h1>
+		<h1>calculermonevenement.fr</h1>
 		<h2>En moins de 5 minutes </h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="400px" class="imghead" alt="budget evenement">
 	</header>

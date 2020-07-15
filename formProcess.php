@@ -4,12 +4,11 @@
 	include("functions.php");
 
 	if (isset($_POST["email"])) {
-		$result1 = $db->prepare('SELECT * FROM user WHERE email = ? AND company = ?');
-		$result1->execute(array($_POST["email"], $_POST["company"]));
+		$result1 = $db->prepare('SELECT * FROM user WHERE email = ?');
+		$result1->execute(array($_POST["email"]));
 		if ($result1->rowCount() == 1) { //check if there is one entry in the database
 			session_start();
 			$_SESSION["email"] = $_POST["email"];
-			$_SESSION["company"] = $_POST["company"];
 			header("Location: updateProfile.php");
 				#createSession(); //create a session with this user
 		}else{
