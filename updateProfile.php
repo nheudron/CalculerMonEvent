@@ -7,24 +7,39 @@
 <title>Calculer mon Evenement</title>
 </head>
 	<body>
+		<?php 
+		session_start();
+		include("db_connexion.php");
+		
+		$result4 = $db->prepare('SELECT * FROM user WHERE email = ? AND company = ?');
+		$result4->execute(array($_SESSION["email"], $_SESSION["company"]));
+		$dataProfile = $result4->fetch(); 
+		$_SESSION["user_id"] = $dataProfile["id"];
+		?>
 	<header>
 		<h1><a href="index.php">calculermonevenement.com</a></h1>
 		<h2>En moins de 5 minutes </h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement">
 	</header>
-	
 	<main>
-		<form id="formUser" style="formColumn" method="post" action="formProcess.php">
-			<label for="nom">Nom</label><br><input type="text" name="name" id="nom"><br>
-			<label for="prenom">Prénom</label><br><input type="text" name="surname" id="prenom"><br>
-			<label for="entreprise">Société *</label><br><input type="text" name="company" id="entreprise" required><br>
-			<label for="email">email *</label><br><input type="email" name="email" id="email" required><br>
-			<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone"><br>
+		<center><p> Vous disposez déjà d'un profile pour cette adresse email<br> 
+			avec les informations ci-dessous : </p>
+		<p class="note">Vous pouvez modifier vos informations et cliquer sur suivant.</p></center>
+		<form id="formUser" style="formColumn" method="post" action="updateProfileProcess.php">
+			<label for="nom">Nom</label><br><input type="text" name="name" id="nom" value="<?php echo $dataProfile["name"];?>"><br>
+			<label for="prenom">Prénom</label><br><input type="text" name="surname" id="prenom" value="<?php echo $dataProfile["surname"];?>"><br>
+			<label for="entreprise">Société *</label><br><input type="text" name="company" id="entreprise" required value="<?php echo $dataProfile["company"];?>"><br>
+			<label for="email">email *</label><br><input type="email" name="email" id="email" required value="<?php echo $dataProfile["email"];?>"><br>
+			<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone" value="<?php echo $dataProfile["phone"];?>"><br>
+			<input type="hidden" name="user_id" id="user_id" value="<?php echo $dataProfile[id]; ?>">
 			<p class="note">* champs obligatoires</p>
 			<input type="submit" value="Suivant"/>
+			
 		</form>
 	</main>
-	
+	<?php 
+		#session_destroy();
+	?>
 <script>
 var check = {};
 	
