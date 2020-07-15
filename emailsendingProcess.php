@@ -1,7 +1,7 @@
 <?php
  
 session_start();
-$email = $_SESSION["email"];
+ 
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -18,7 +18,7 @@ require 'PHPMailer/src/SMTP.php';
 
 //Load composer's autoloader
 //require 'vendor/autoload.php';
-function sendingEmail(){
+function sendingEmail($email, $name){
 	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 	try {
 		//Server settings
@@ -33,7 +33,7 @@ function sendingEmail(){
 
 		//Recipients
 		$mail->setFrom('no-reply@coach-evenements.alwaysdata.net', 'Calculer Mon Evenement');
-		$mail->addAddress($email, 'Joe User');     // Add a recipient
+		$mail->addAddress($email, $name);     // Add a recipient
 		//$mail->addAddress('ellen@example.com');               // Name is optional
 		//$mail->addReplyTo('info@example.com', 'Information');
 		//$mail->addCC('cc@example.com');
@@ -45,8 +45,8 @@ function sendingEmail(){
 
 		//Content
 		$mail->isHTML(true);                                  // Set email format to HTML
-		$mail->Subject = 'Estimation budgétaire de votre événement';
-		$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+		$mail->Subject = 'Estimation budgetaire de votre evenement';
+		$mail->Body    = 'This is the HTML message bodyé"\'(-è_çà)\' <b>in bold!</b>';
 		//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 		$mail->send();

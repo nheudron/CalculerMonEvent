@@ -2,9 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
+<script src="https://kit.fontawesome.com/10a40eb87c.js" crossorigin="anonymous"></script>
 </head>
 	
 <?php include("db_connexion.php")?>

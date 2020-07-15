@@ -147,8 +147,7 @@ header h2{
 /* footer -------------------------------------------------------------*/
 footer{
 	display: flex;
-	position: absolute;
-	bottom: 0px;
+	margin-top: 230px;
 	width: 100%;
 }
 footer div{

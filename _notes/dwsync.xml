@@ -2,10 +2,10 @@
 <dwsync>
 <file name="index.php" server="ftp-coach-evenements.alwaysdata.net//" local="3676626525" remote="3676619460" Dst="-1" />
 <file name="db_connexion.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388579430673967" remote="132388507200000000" Dst="2" />
-<file name="main.css" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391298203235741" remote="132391225800000000" Dst="2" />
-<file name="index.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391216947219106" remote="132391144800000000" Dst="2" />
+<file name="main.css" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392849836436905" remote="132392777400000000" Dst="2" />
+<file name="index.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392847805795418" remote="132392775600000000" Dst="2" />
 <file name="form.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391229284174195" remote="132391156800000000" Dst="2" />
-<file name="formProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391266502733738" remote="132391194000000000" Dst="2" />
+<file name="formProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392897443402608" remote="132392825400000000" Dst="2" />
 <file name="form2.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391281384239673" remote="132391209000000000" Dst="2" />
 <file name="delAccount.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391217252197778" remote="132391144800000000" Dst="2" />
 <file name="delProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132388674392509094" remote="132388602000000000" Dst="2" />
@@ -13,6 +13,7 @@
 <file name="form3.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391300400672290" remote="132391228200000000" Dst="2" />
 <file name="form3Process.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132391283490665870" remote="132391211400000000" Dst="2" />
 <file name="sendEmail.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392768331724316" remote="132392695800000000" Dst="2" />
-<file name="emailsent.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392838261776844" remote="132392766000000000" Dst="2" />
-<file name="emailsendingProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392838393314729" remote="132392766000000000" Dst="2" />
+<file name="emailsent.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392840362596283" remote="132392767800000000" Dst="2" />
+<file name="emailsendingProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392844979353000" remote="132392772600000000" Dst="2" />
+<file name="functions.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392897263084541" remote="132392824800000000" Dst="2" />
 </dwsync>

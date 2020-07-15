@@ -21,7 +21,11 @@
 	
 	<main>
 		<div class="home">
-			<?php sendingEmail(); ?>
+			<?php 
+			$email = $_SESSION["email"];
+			$name = $_SESSION["email"];
+			
+			sendingEmail($email, $name); ?>
 			<h1>Un email vient de vous être envoyé à l'adresse<br><br>
 			<?php echo $_SESSION["email"]; ?></h1>
 			<a href="emailsent.php"><button>Renvoyer l'email</button></a>
