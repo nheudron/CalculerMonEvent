@@ -9,6 +9,7 @@
 	
 <?php 
 	include("db_connexion.php");
+	include("emailsendingProcess.php");
 	session_start();
 	?>
 	
@@ -20,9 +21,10 @@
 	
 	<main>
 		<div class="home">
-			<h1>L'estimation budgétaire sera envoyée à l'adresse : <br><br>
+			<?php sendingEmail(); ?>
+			<h1>Un email vient de vous être envoyé à l'adresse<br><br>
 			<?php echo $_SESSION["email"]; ?></h1>
-			<a href="emailsent.php"><button>Envoyer l'email</button></a>
+			<a href="emailsent.php"><button>Renvoyer l'email</button></a>
 		</div>
 	</main>
 
