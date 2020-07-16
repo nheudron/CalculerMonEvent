@@ -103,6 +103,11 @@ history.forward()
 	}else{
 		header("Location: form.php");
 	}?>
-	
+<script type="text/javascript"> 
+    window.addEventListener('beforeunload', function(e){ 
+        e.preventDefault(); 
+        e.returnValue = '';
+    }); 
+</script>
 </body>
 </html>

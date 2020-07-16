@@ -46,7 +46,7 @@ function sendingEmail($email, $name){
 		//Content
 		$mail->isHTML(true);                                  // Set email format to HTML
 		$mail->Subject = 'Estimation budgetaire de votre evenement';
-		$mail->Body    = 'This is the HTML message bodyé"\'(-è_çà)\' <b>in bold!</b>';
+		$mail->Body    = '';
 		//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 		$mail->send();
