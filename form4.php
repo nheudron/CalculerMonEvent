@@ -20,66 +20,75 @@
 	</header>
 	
 	<main class="form3">
-		<h2>Forfaits les plus courants</h2>
-		<form id="formPackage" method="post" action="form3Process.php">
-			<main>
-				<div>
-					<header><h3>Journée d'étude</h3></header>
-					<main>
-						<ul>
-							<li>1 salle</li>
-							<li>1 déjeuner</li>
-							<li>2 pauses</li>
-						</ul>
-					</main>
-					<br>
-					<span><label for="journee_detude">Quantité &nbsp;</label><input type="number" name="journee_detude" id="journee_detude"></span>
-				</div>
-				<div>
-					<header><h3>Demi-journée d'étude</h3></header>
-					<main>
-						<ul>
-							<li>1 salle</li>
-							<li>1 déjeuner</li>
-							<li>2 pauses</li>
-						</ul>
-					</main>
-					<span><label for="demijournee_detude">Quantité &nbsp;</label><input type="number" name="demijournee_detude" id="demijournee_detude"></span>
-				</div>
-				<div>
-					<header><h3>Séminaire résidentiel</h3></header>
-					<main>
-						<ul>
-							<li>1 salle</li>
-							<li>1 repas</li>
-							<li>2 pauses</li>
-							<li>1 chambre B&B</li>
-						</ul>
-					</main>
-					<span><label for="seminaire_residentiel">Quantité &nbsp;</label><input type="number" name="seminaire_residentiel" id="seminaire_residentiel"></span>
-				</div>
-				<div>
-					<header><h3>Séminaire semi-résidentiel</h3></header>
-					<main>
-						<ul>
-							<li>1 salle</li>
-							<li>1 déjeuner</li>
-							<li>1 diner</li>
-							<li>2 pauses</li>
-							<li>1 chambre B&B</li>
-						</ul>
-					</main>
-					<span><label for="seminaire_semiresidentiel">Quantité &nbsp;</label><input type="number" name="seminaire_semiresidentiel" id="seminaire_semiresidentiel"></span>
-				</div>
-			</main>
-			<input type="submit" value="Suivant"/>
-		</form>
+		<h2>Vous avez choisi le forfait</h2>
 		
-		<div class="without">
-			<p>Pas de forfait</p>
-			<a href=""><button>Suivant</button></a>
+		<div>
+			<header><h3>Demi-journée d'étude</h3></header>
+			<main>
+				<ul>
+					<li>1 salle</li>
+					<li>1 déjeuner</li>
+					<li>2 pauses</li>
+				</ul>
+			</main>
+			<span><label for="demijournee_detude">Quantité &nbsp;</label>3</span>
 		</div>
 		
+		<form id="formOptionPackage" method="post" action="form4Process.php">
+				<div>
+					<header><h3>Animation</h3></header>
+					<main>
+						<input type="checkbox" name="conferencier" id="conferencier"><label for="conferencier"> &nbsp;Conférencier</label>
+						<input type="checkbox" name="gala" id="gala"><label for="gala"> &nbsp;gala</label>
+						<input type="checkbox" name="team_building" id="team_building"><label for="team_building"> &nbsp;gala</label>
+					</main>
+					<br>
+				</div>
+				<div>
+					<header><h3>Besoins techniques</h3></header>
+					<main>
+						<input type="checkbox" name="video" id="video"><label for="video"> &nbsp;Vidéo projection</label>
+						<input type="checkbox" name="sound" id="sound"><label for="sound"> &nbsp;Sonorisation/microphone</label>
+						<input type="checkbox" name="light" id="light"><label for="light"> &nbsp;Lumières</label>
+					</main>
+					<br>
+				</div>
+				<div>
+					<header><h3>Logistique</h3></header>
+					<main>
+						<input type="checkbox" name="home_agents" id="home_agents"><label for="home_agents"> &nbsp;Agents d'accueil</label>
+						<input type="checkbox" name="security_agents" id="security_agents"><label for="security_agents"> &nbsp;Agents de sécurité</label>
+						<input type="checkbox" name="light" id="light"><label for="light"> &nbsp;gala</label>
+					</main>
+					<br>
+				</div>
+				<div>
+					<header><h3>Hébergement</h3></header>
+					<p class="note">x nuit pour x personnes</p>
+					<main>
+						<input type="checkbox" name="single2" id="single2"><label for="single2"> &nbsp;Single(2)</label>
+						<input type="checkbox" name="single3" id="single3"><label for="single3"> &nbsp;Single(3)</label>
+						<input type="checkbox" name="single4" id="single4"><label for="single4"> &nbsp;Single(4)</label>
+						<input type="checkbox" name="double2" id="double2"><label for="double2"> &nbsp;Double(2)</label>
+						<input type="checkbox" name="double3" id="double3"><label for="double3"> &nbsp;Single(3)</label>
+						<input type="checkbox" name="double4" id="double4"><label for="double4"> &nbsp;Single(4)</label>
+					</main>
+					<br>
+				</div>
+				<div>
+					<header><h3>Transport</h3></header>
+					<p class="note">pour x personnes</p>
+					<main>
+						<input type="checkbox" name="taxi" id="taxi"><label for="taxi"> &nbsp;Taxi</label>
+						<input type="checkbox" name="bus" id="bus"><label for="bus"> &nbsp;Bus</label>
+						<input type="checkbox" name="train" id="train"><label for="train"> &nbsp;Train</label>
+						<input type="checkbox" name="plane" id="plane"><label for="plane"> &nbsp;Avion</label>
+					</main>
+					<br>
+				</div>
+			<input type="submit" value="Suivant"/>
+		</form>
+
 	</main>
 	
 	<?php 

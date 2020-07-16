@@ -163,12 +163,12 @@ select{
 	margin: auto;
 	text-align: center;
 }
-#formForfait main{
+#formPackage main{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
-#formForfait div{
+#formPackage div{
 	width: 325px;
 	margin: 20px;
 	box-shadow: 0px 1px 10px 0.1px rgba(200,200,200,0.4);
