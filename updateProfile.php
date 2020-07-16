@@ -15,10 +15,9 @@
 			$result4 = $db->prepare('SELECT * FROM user WHERE email = ?');
 			$result4->execute(array($_SESSION["email"]));
 			$dataProfile = $result4->fetch(); 
-			$_SESSION["user_id"] = $dataProfile["id"];
 			?>
 			<header>
-				<h1><a href="index.php">calculermonevenement.fr</a></h1>
+				<h1>calculermonevenement.fr</h1>
 				<h2>En moins de 5 minutes </h2>
 				<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement">
 			</header>

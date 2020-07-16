@@ -97,6 +97,10 @@ input[type=checkbox] {
 	width: auto;
 	margin: 15px;
 }
+input[type=radio] {
+	width: 13px!important;
+	margin: 15px;
+}
 .note{
 	color: gray;
 	font-style: italic;
@@ -196,6 +200,7 @@ select{
 }
 #formOptionPackage > main > div{
 	height: auto;
+	padding: 0;
 }
 #formOptionPackage > main > div > main{
 	display: flex;

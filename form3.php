@@ -36,7 +36,7 @@ history.forward()
 							<li>2 pauses</li>
 						</ul>
 					</main>
-					<br>
+					<br><br>
 					<span><label for="journee_detude">Quantité &nbsp;</label><input type="number" name="journee_detude" id="journee_detude"></span>
 				</div>
 				<div>
@@ -48,6 +48,7 @@ history.forward()
 							<li>2 pauses</li>
 						</ul>
 					</main>
+					<br><br>
 					<span><label for="demijournee_detude">Quantité &nbsp;</label><input type="number" name="demijournee_detude" id="demijournee_detude"></span>
 				</div>
 				<div>
