@@ -166,20 +166,19 @@ footer div{
 	box-shadow: 0px 1px 10px 0.1px rgba(200,200,200,0.4);
 	padding: 0 0 10px 0;
 }
-/* form2 -------------------------------------------------------------*/
-select{
-	width: 300px;
-}
-/* form3 -------------------------------------------------------------*/
-.form3 h2{
+.formType h2{
 	margin: auto;
 	text-align: center;
 }
-.form3 .without{
+.formType .without{
 	margin: 15px auto;
 	text-align: center;
 	box-shadow: 0px 1px 10px 0.1px rgba(200,200,200,0.4);
 	width: 200px;
 	padding: 1px 2px 25px 5px;
+}
+/* form2 -------------------------------------------------------------*/
+select{
+	width: 300px;
 }
 /* form4 -------------------------------------------------------------*/

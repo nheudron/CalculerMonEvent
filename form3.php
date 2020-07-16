@@ -17,14 +17,15 @@ history.forward()
 	?>
 <body>	
 	<header>
-		<h1><a href="index.php">calculermonevenement.fr</a></h1>
+		<h1>calculermonevenement.fr</h1>
 		<h2>En moins de 5 minutes</h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement" >
 	</header>
 	
 	<main class="form3">
-		<h2>Forfaits les plus courants</h2>
+
 		<form id="formPackage" class="formType" method="post" action="form3Process.php">
+			<h2>Forfaits les plus courants</h2>
 			<main>
 				<div>
 					<header><h3>Journée d'étude</h3></header>
@@ -76,12 +77,12 @@ history.forward()
 				</div>
 			</main>
 			<input type="submit" value="Suivant"/>
+			
+			<div class="without">
+				<p>Pas de forfait</p>
+				<a href=""><button>Suivant</button></a>
+			</div>
 		</form>
-		
-		<div class="without">
-			<p>Pas de forfait</p>
-			<a href=""><button>Suivant</button></a>
-		</div>
 		
 	</main>
 	
@@ -166,6 +167,12 @@ check['seminaire_semiresidentiel'] = function(id) {
     });
 })();
 	
+</script>
+	<script type="text/javascript"> 
+    window.addEventListener('beforeunload', function(e){ 
+        e.preventDefault(); 
+        e.returnValue = '';
+    }); 
 </script>
 </body>
 </html>
