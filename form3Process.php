@@ -14,7 +14,7 @@
 		header("Location: form.php");
 	}
 
-	function choosePackage(){
+	function choosePackage(){ 
 		global $db;
 			$resultPackage = $db->prepare('INSERT INTO package(journee_detude, demijournee_detude, seminaire_residentiel, seminaire_semiresidentiel, event_id) VALUES (:journee_detude, :demijournee_detude, :seminaire_residentiel, :seminaire_semiresidentiel, :event_id)');
 			$resultPackage->execute(array(
