@@ -11,19 +11,15 @@ history.forward()
 </script>
 </head>
 	
-	<?php include("db_connexion.php");
+	<?php 
+	include("db_connexion.php");
+	include("functions.php");
 	session_start();
 	if (isset($_SESSION["email"])){
 		if(isset($_SESSION["event_id"])) {
-			$result4 = $db->prepare('SELECT * FROM event WHERE id = ?');
-			$result4->execute(array($_SESSION["event_id"]));
-			$dataEvent = $result4->fetch(); 
-			$adults = $dataEvent["adults"];
-			$children = $dataEvent["children"];
-			$people = $adults + $children;
-			$start = strtotime($dataEvent["start"]);
-			$end = strtotime($dataEvent["end"]);
-			$duree  = abs($end - $start)/60/60/24;
+	
+			$duree  = duration();
+			$people = people();
 	?>
 <body>	
 	<header>

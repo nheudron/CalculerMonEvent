@@ -26,5 +26,27 @@
 		$_SESSION["user_id"] = $data["id"];
 		$result3->closeCursor();
 	}
-
+	
+	function duration(){
+		include("db_connexion.php");
+		$result4 = $db->prepare('SELECT * FROM event WHERE id = ?');
+		$result4->execute(array($_SESSION["event_id"]));
+		$dataEvent = $result4->fetch(); 
+		$start = strtotime($dataEvent["start"]);
+		$end = strtotime($dataEvent["end"]);
+		$duree  = abs($end - $start)/60/60/24;
+		return $duree;
+	}
+	
+	function people(){
+		include("db_connexion.php");
+		$result4 = $db->prepare('SELECT * FROM event WHERE id = ?');
+		$result4->execute(array($_SESSION["event_id"]));
+		$dataEvent = $result4->fetch(); 
+		$adults = $dataEvent["adults"];
+		$children = $dataEvent["children"];
+		$people = $adults + $children;
+		return $people;
+	}
+		
 ?>

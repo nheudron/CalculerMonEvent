@@ -19,7 +19,7 @@
 	
 	<main>
 		<div class="home">
-			<h1>CALCULERMONEVENEMENT.COM vous permet de définir votre budget pour votre événement.</h1>
+			<h1>CALCULERMONEVENEMENT.FR vous permet de définir votre budget pour votre événement.</h1>
 			<a href="form.php"><button>calculer mon budget</button></a>
 		</div>
 	</main>
