@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
+	<SCRIPT LANGUAGE="JavaScript">
+history.forward()
+</SCRIPT>
 </head>
 	
 	<?php include("db_connexion.php");
@@ -21,7 +24,7 @@
 	
 	<main class="form3">
 		<h2>Forfaits les plus courants</h2>
-		<form id="formPackage" method="post" action="form3Process.php">
+		<form id="formPackage" class="formType" method="post" action="form3Process.php">
 			<main>
 				<div>
 					<header><h3>Journée d'étude</h3></header>

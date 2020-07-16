@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
+<script LANGUAGE="JavaScript">
+history.forward()
+</script>
 </head>
 	
 	<?php include("db_connexion.php");

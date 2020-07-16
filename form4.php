@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
+<script LANGUAGE="JavaScript">
+history.forward()
+</script>
 </head>
 	
 	<?php include("db_connexion.php");
@@ -34,7 +37,8 @@
 			<span><label for="demijournee_detude">Quantité &nbsp;</label>3</span>
 		</div>
 		
-		<form id="formOptionPackage" method="post" action="form4Process.php">
+		<form id="formOptionPackage" class="formType" method="post" action="form4Process.php">
+			<main>
 				<div>
 					<header><h3>Animation</h3></header>
 					<main>
@@ -86,6 +90,7 @@
 					</main>
 					<br>
 				</div>
+				</main>
 			<input type="submit" value="Suivant"/>
 		</form>
 
@@ -98,80 +103,6 @@
 	}else{
 		header("Location: form.php");
 	}?>
-<script>
-var check = {};
 	
-check['journee_detude'] = function(id) {
-    var name = document.getElementById(id);
-	if (name.value%2 == 0) {
-        name.className = 'correct';
-        return true;
-    }else{
-        name.className = 'incorrect';
-        return false;
-    }
-};
-
-check['demijournee_detude'] = function(id) {
-    var name = document.getElementById(id);
-	if (name.value%2 == 0) {
-        name.className = 'correct';
-        return true;
-    }else{
-        name.className = 'incorrect';
-        return false;
-    }
-};
-	
-check['seminaire_residentiel'] = function(id) {
-
-    var name = document.getElementById(id);
-	if (name.value%2 == 0) {
-        name.className = 'correct';
-        return true;
-    }else{
-        name.className = 'incorrect';
-        return false;
-};
-	
-check['seminaire_semiresidentiel'] = function(id) {
-	var name = document.getElementById(id);
-	if (name.value%2 == 0) {
-        name.className = 'correct';
-        return true;
-    }else{
-        name.className = 'incorrect';
-        return false;
-};
-
-(function() { 
-
-    var myForm = document.getElementById('formPackage'),
-        inputs = document.querySelectorAll('input[type=number]'),
-        inputsLength = inputs.length;
-
-    for (var i = 0; i < inputsLength; i++) {
-        inputs[i].addEventListener('keyup', function(e) {
-            check[e.target.id](e.target.id); // "e.target" représente l'input actuellement modifié
-        });
-    }
-
-    myForm.addEventListener('submit', function(e) {
-
-        var result = true;
-
-        for (var i in check) {
-            result = check[i](i) && result;
-        }
-
-        if (result) {
-            
-        }else{
-			e.preventDefault();
-		}
-    });
-})();
-	
-</script>
 </body>
 </html>
