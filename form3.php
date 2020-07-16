@@ -10,7 +10,10 @@ history.forward()
 </script>
 </head>
 	
-	<?php include("db_connexion.php");
+	<?php 
+	include("db_connexion.php");
+	include("functions.php");
+	$duration = duration() + 1;
 	session_start();
 	if (isset($_SESSION["email"])){
 		if(isset($_SESSION["event_id"])) {
@@ -26,6 +29,7 @@ history.forward()
 
 		<form id="formPackage" class="formType" method="post" action="form3Process.php">
 			<h2>Forfaits les plus courants</h2>
+			<p class="note">Durée de l'événement : <?php echo $duration ?> jour(s)</p>
 			<main>
 				<div>
 					<header><h3>Journée d'étude</h3></header>
