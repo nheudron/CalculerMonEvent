@@ -9,6 +9,7 @@
 	
 <?php 
 	include("db_connexion.php");
+	include("definePrices.php");
 	include("emailsendingProcess.php");
 	session_start();
 	if (isset($_SESSION["email"])){
