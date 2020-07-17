@@ -305,7 +305,7 @@ a[x-apple-data-detectors] {
                               <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial,  helvetica, sans-serif;line-height:21px;color:#666666"><span style="font-size:16px;line-height:24px">You"ve been with us</span></p></td>
                             </tr>
                             <tr style="border-collapse:collapse">
-                              <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial,  helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#666666"><span style="font-size:30px">8 months</span></h1></td>
+                              <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial,  helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#666666"><span style="font-size:30px">'.$finalPriceLow.'</span></h1></td>
                             </tr>
                             <tr style="border-collapse:collapse">
                               <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial,  helvetica, sans-serif;line-height:21px;color:#666666"><span style="font-size:16px;line-height:24px">Athlete status.</span></p></td>
@@ -324,7 +324,7 @@ a[x-apple-data-detectors] {
                               <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:arial,  helvetica, sans-serif;line-height:24px;color:#666666">Amount of training</p></td>
                             </tr>
                             <tr style="border-collapse:collapse">
-                              <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial,  helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#666666"> <span style="font-size:30px">27</span></h1></td>
+                              <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial,  helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#666666"> <span style="font-size:30px">'.$finalPriceHigh.'</span></h1></td>
                             </tr>
                             <tr style="border-collapse:collapse">
                               <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial,  helvetica, sans-serif;line-height:21px;color:#666666"><span style="font-size:16px;line-height:24px">Athlete status.</span></p></td>

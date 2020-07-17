@@ -126,22 +126,22 @@
 	
 	function duration(){
 		include("db_connexion.php");
-		$result4 = $db->prepare('SELECT * FROM event WHERE id = ?');
-		$result4->execute(array($_SESSION["event_id"]));
-		$dataEvent = $result4->fetch(); 
-		$start = strtotime($dataEvent["start"]);
-		$end = strtotime($dataEvent["end"]);
-		$duree  = abs($end - $start)/60/60/24;
-		return $duree;
+		$resultDuration = $db->prepare('SELECT * FROM event WHERE id = ?');
+		$resultDuration->execute(array($_SESSION["event_id"]));
+		$dataEventDuration = $resultDuration->fetch(); 
+		$start = strtotime($dataEventDuration["start"]);
+		$end = strtotime($dataEventDuration["end"]);
+		$Duration  = abs($end - $start)/60/60/24;
+		return $Duration;
 	}
 	
 	function people(){
 		include("db_connexion.php");
-		$result4 = $db->prepare('SELECT * FROM event WHERE id = ?');
-		$result4->execute(array($_SESSION["event_id"]));
-		$dataEvent = $result4->fetch(); 
-		$adults = $dataEvent["adults"];
-		$children = $dataEvent["children"];
+		$resultPeople = $db->prepare('SELECT * FROM event WHERE id = ?');
+		$resultPeople->execute(array($_SESSION["event_id"]));
+		$dataEventPeople = $resultPeople->fetch(); 
+		$adults = $dataEventPeople["adults"];
+		$children = $dataEventPeople["children"];
 		$people = $adults + $children;
 		return $people;
 	}

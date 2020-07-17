@@ -13,8 +13,9 @@ history.forward()
 	<?php 
 	include("db_connexion.php");
 	include("functions.php");
-	$duration = duration() + 1;
 	session_start();
+	$duration = duration() + 1;
+	
 	if (isset($_SESSION["email"])){
 		if(isset($_SESSION["event_id"])) {
 	?>

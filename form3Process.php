@@ -16,13 +16,15 @@
 
 	function choosePackage(){ 
 		global $db;
-			$resultPackage = $db->prepare('INSERT INTO package(journee_detude, demijournee_detude, seminaire_residentiel, seminaire_semiresidentiel, event_id) VALUES (:journee_detude, :demijournee_detude, :seminaire_residentiel, :seminaire_semiresidentiel, :event_id)');
+		$no_package = 1;
+			$resultPackage = $db->prepare('INSERT INTO package(journee_detude, demijournee_detude, seminaire_residentiel, seminaire_semiresidentiel, event_id, no_package) VALUES (:journee_detude, :demijournee_detude, :seminaire_residentiel, :seminaire_semiresidentiel, :event_id, :no_package)');
 			$resultPackage->execute(array(
 				'journee_detude'=>$_POST["journee_detude"],
 				'demijournee_detude'=>$_POST["demijournee_detude"],
 				'seminaire_residentiel'=>$_POST["seminaire_residentiel"],
 				'seminaire_semiresidentiel'=>$_POST["seminaire_semiresidentiel"],
-				'event_id'=>$_SESSION["event_id"]
+				'event_id'=>$_SESSION["event_id"],
+				'no_package'=>$no_package
 			));
 			$resultPackage->closeCursor();
 	}
