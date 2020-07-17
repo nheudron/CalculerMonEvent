@@ -2,7 +2,7 @@
 session_start();
 include("functions.php");
 
-$duration = duration()+1;
+$duration = duration() + 1;
 $people = people();
 
 $resultEvent = $db->prepare('SELECT * FROM package WHERE event_id = ?');
