@@ -14,6 +14,8 @@ history.forward()
 	<?php 
 	include("db_connexion.php");
 	include("functions.php");
+	$people = people();
+	$duration = duration() + 1;
 	session_start();
 	if (isset($_SESSION["email"])){
 		if(isset($_SESSION["event_id"])) {
@@ -27,21 +29,32 @@ history.forward()
 		<h2>En moins de 5 minutes</h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement" >
 	</header>
-		<main class="form3">
-			<!--<center><h2>Vous avez choisi le forfait</h2></center>
-			<div class='recall'>
-				<header><h3>Demi-journée d'étude</h3></header>
+		<main class="form5">
+			
+			<form id="formNoPackage" class="formType" method="post" action="form5Process.php">
 				<main>
-					<ul>
-						<li>1 salle</li>
-						<li>1 déjeuner</li>
-						<li>2 pauses</li>
-					</ul>
+					<div>
+						<header><h3>Location de salle</h3></header>
+						<p class="note">sur <?php echo $duration ?> jour(s)</p>
+						<main>
+							<span><label for="rooms">Nombre de salles &nbsp;</label><input type="number" name="rooms" id="rooms"></span>
+						</main>
+						<br>
+					</div>
+					<div>
+						<header>
+							<h3>Restauration</h3>
+							<p class="note">Nombre de personnes qui prendront un repas</p>
+						</header>
+						<main>
+							<span><input type="number" name="lunch" id="lunch"><label for="lunch"> &nbsp;Déjeuner/jour</label></span>
+							<span><input type="number" name="diner" id="diner"><label for="diner"> &nbsp;Dîner/jour</label></span>
+							<span><input type="number" name="break" id="break"><label for="break"> &nbsp;Pause/jour</label></span>
+						</main>
+						<br>
+					</div>
 				</main>
-				<span><label for="demijournee_detude">Quantité &nbsp;</label>3</span>
-			</div>-->
-			<div class="add"><h3>Ajouter une option <br><i class="fas fa-arrow-down"></i></h3></div>
-			<form id="formOptionPackage" class="formType" method="post" action="form4Process.php">
+				<section class="add"><h3>Ajouter une option <br><i class="fas fa-arrow-down"></i></h3></section>
 				<main>
 					<div>
 						<header><h3>Animation</h3></header>

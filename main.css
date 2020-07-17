@@ -183,7 +183,7 @@ footer div{
 select{
 	width: 300px;
 }
-/* form4 -------------------------------------------------------------*/
+/* form4 & 5 -------------------------------------------------------------*/
 .recall{
 	margin: auto;
 	width: 300px;
@@ -192,25 +192,25 @@ select{
 }
 .add{
 	text-align: center;
-	width: 95%;
-	background-color: #46A8FF;
+	width: 95%!important;
+	background: #46A8FF;
 	margin: 10px auto;
 	padding: 10px auto;
 	color: white;
 }
-#formOptionPackage > main > div{
+.formType > main > div{
 	height: auto;
-	padding: 0;
+	padding: 1px 20px 0 20px;
 }
-#formOptionPackage > main > div > main{
+.formType > main > div > main{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	text-align: justify;
 }
-#formOptionPackage > main > div > main > span{
+.formType > main > div > main > span{
 	width: 100%;
 }
-#formOptionPackage label{
+.formType label{
 	width: 100%;
 }

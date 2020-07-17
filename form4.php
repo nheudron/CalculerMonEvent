@@ -27,7 +27,7 @@ history.forward()
 		<h2>En moins de 5 minutes</h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement" >
 	</header>
-		<main class="form3">
+		<main class="form4">
 			<!--<center><h2>Vous avez choisi le forfait</h2></center>
 			<div class='recall'>
 				<header><h3>Demi-journée d'étude</h3></header>

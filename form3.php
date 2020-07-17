@@ -83,12 +83,12 @@ history.forward()
 			</main>
 			<input type="submit" value="Suivant" onClick="unhook()"/>
 			
-			<div class="without">
-				<p>Pas de forfait</p>
-				<a href="form5.php" onClick="unhook()"><button>Suivant</button></a>
-			</div>
+			
 		</form>
-		
+		<div class="without">
+			<p>Pas de forfait</p>
+			<a href="form5.php" onClick="unhook()"><button>Suivant</button></a>
+		</div>
 	</main>
 	
 	<?php 
