@@ -75,12 +75,13 @@ history.forward()
 						<header><h3>Hébergement</h3></header>
 						<p class="note"> <?php echo $duree ?> nuit pour <?php echo $people ?> personnes en<br>chambre d'hôtel B&B</p>
 						<main>
-							<span><input type="radio" name="accomodation" id="single2" value="single2"><label for="single2"> &nbsp;Single(2<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="single3" value="single3"><label for="single3"> &nbsp;Single(3<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="single4" value="single4"><label for="single4"> &nbsp;Single(4<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="double2" value="double2"><label for="double2"> &nbsp;Double(2<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="double3" value="double3"><label for="double3"> &nbsp;Single(3<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="double4" value="double4"><label for="double4"> &nbsp;Single(4<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="single2" value="single2"><label for="single2"> &nbsp;Single (2<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="single3" value="single3"><label for="single3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="single4" value="single4"><label for="single4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="double2" value="double2"><label for="double2"> &nbsp;Double (2<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="double3" value="double3"><label for="double3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="double4" value="double4"><label for="double4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label></span>
+							<span><input type="radio" name="accomodation" id="none" value=null><label for="none"> &nbsp;Aucun</label></span>
 						</main>
 						<br>
 					</div>
@@ -92,13 +93,14 @@ history.forward()
 							<span><input type="radio" name="transport" id="bus" value="bus"><label for="bus"> &nbsp;Bus</label></span>
 							<span><input type="radio" name="transport" id="train" value="train"><label for="train"> &nbsp;Train</label></span>
 							<span><input type="radio" name="transport" id="plane" value="plane"><label for="plane"> &nbsp;Avion</label></span>
+							<span><input type="radio" name="transport" id="perso" value=null><label for="perso"> &nbsp;Moyen personnel</label></span>
+
 						</main>
 						<br>
 					</div>
 				</main>
 				<input type="submit" value="Suivant" onClick="unhook()"/>
 			</form>
-
 	</main>
 	
 	<?php 

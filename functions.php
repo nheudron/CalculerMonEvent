@@ -100,7 +100,17 @@
 		}else{
 			$covid = 1;
 		}
-		
+		if(empty($_POST["accomodation"]) || $_POST["accomodation"]="null"){
+			$accomodation = null;
+		}else{
+			$accomodation = $_POST["accomodation"];
+		}
+		if(empty($_POST["transport"])  || $_POST["transport"]="null"){
+			$transport = null;
+		}else{
+			$transport = $_POST["transport"];
+		}
+
 		$resultOptionPackage = $db->prepare('INSERT INTO logistics(event_id, home_agents, security_agents, badges, covid, accomodation, transport) VALUES (:event_id, :home_agents, :security_agents, :badges, :covid, :accomodation, :transport)');
 		$resultOptionPackage->execute(array(
 			'event_id'=>$_SESSION["event_id"],
@@ -108,8 +118,8 @@
 			'security_agents'=>$security_agents,
 			'badges'=>$badges,
 			'covid'=>$covid,
-			'accomodation'=>$_POST["accomodation"],
-			'transport'=>$_POST["transport"],
+			'accomodation'=>$accomodation,
+			'transport'=>$transport
 		));
 		$resultOptionPackage->closeCursor();
 	}
