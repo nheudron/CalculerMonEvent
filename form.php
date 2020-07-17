@@ -21,7 +21,7 @@
 			<label for="email">email *</label><br><input type="email" name="email" id="email" required><br>
 			<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone"><br>
 			<p class="note">* champs obligatoires</p>
-			<input type="submit" value="Suivant"/>
+			<input type="submit" value="Suivant" onClick="unhook()"/>
 		</form>
 	</main>
 	
@@ -134,6 +134,17 @@ check['email'] = function(id) {
 		}
     });
 })();
+</script>
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if (hook) { 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
 </script>
 </body>
 </html>

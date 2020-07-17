@@ -33,7 +33,7 @@
 					<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone" value="<?php echo $dataProfile["phone"];?>"><br>
 					<input type="hidden" name="user_id" id="user_id" value="<?php echo $dataProfile[id]; ?>">
 					<p class="note">* champs obligatoires</p>
-					<input type="submit" value="Suivant"/>
+					<input type="submit" value="Suivant" onClick="unhook()"/>
 
 				</form>
 			</main>
@@ -152,6 +152,17 @@ check['email'] = function(id) {
 		}
     });
 })();
+</script>
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if (hook) { 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
 </script>
 </body>
 </html>

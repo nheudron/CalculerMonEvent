@@ -81,7 +81,7 @@ history.forward()
 					<span><label for="seminaire_semiresidentiel">Quantité &nbsp;</label><input type="number" name="seminaire_semiresidentiel" id="seminaire_semiresidentiel"></span>
 				</div>
 			</main>
-			<input type="submit" value="Suivant"/>
+			<input type="submit" value="Suivant" onClick="unhook()"/>
 			
 			<div class="without">
 				<p>Pas de forfait</p>
@@ -173,11 +173,16 @@ check['seminaire_semiresidentiel'] = function(id) {
 })();
 	
 </script>
-	<script type="text/javascript"> 
-    window.addEventListener('beforeunload', function(e){ 
-        e.preventDefault(); 
-        e.returnValue = '';
-    }); 
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if(hook){ 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
 </script>
 </body>
 </html>

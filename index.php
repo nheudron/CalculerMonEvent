@@ -10,7 +10,7 @@
 </head>
 	
 <?php include("db_connexion.php")?>
-	
+<body>	
 	<header>
 		<h1>calculermonevenement.fr</h1>
 		<h2>En moins de 5 minutes </h2>
@@ -20,7 +20,7 @@
 	<main>
 		<div class="home">
 			<h1>CALCULERMONEVENEMENT.FR vous permet de définir votre budget pour votre événement.</h1>
-			<a href="form.php"><button>calculer mon budget</button></a>
+			<a href="form.php" onClick="unhook()"><button>calculer mon budget</button></a>
 		</div>
 	</main>
 	
@@ -29,6 +29,5 @@
 		<div>element2</div>
 		<div>element3</div>
 	</footer>
-<body>
 </body>
 </html>

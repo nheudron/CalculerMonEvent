@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
 </head>
-	
+<body>	
 <?php 
 	include("db_connexion.php");
 	session_start();
@@ -23,13 +23,23 @@
 		<div class="home">
 			<h1>L'estimation budgétaire sera envoyée à l'adresse : <br><br>
 			<?php echo $_SESSION["email"]; ?></h1>
-			<a href="emailsent.php"><button>Envoyer l'email</button></a>
+			<a href="emailsent.php" onClick="unhook()"><button>Envoyer l'email</button></a>
 		</div>
 	</main>
 	<?php 
 	}else{
 		header("Location: form.php");
 	}?>
-<body>
 </body>
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if (hook) { 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
+</script>
 </html>

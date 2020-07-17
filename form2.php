@@ -30,21 +30,21 @@ history.forward()
 			<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required>
 			<label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
 			<label for="lieu">Lieu</label><br>
-			<select name="place" id="lieu">
+			<select name="place" id="lieu" class="correct">
 				<option value="" disabled>Sélectionnez une option</option>
 				<option value="Ile de France">Ile de France</option>
 				<option value="Grandes Villes">Grandes Villes</option>
 				<option value="Province">Province</option>
 			</select><br><br>
 			<label for="type">Type d'événement</label><br>
-			<select name="type" id="type">
+			<select name="type" id="type" class="correct">
 				<option value="" disabled>Sélectionnez une option</option>
 				<option value="Séminaire">Séminaire</option>
 				<option value="Gala">Gala</option>
 				<option value="Gala">Conférence</option>
 				<option value="Convention">Convention</option>
 			</select><br><br>
-			<input type="submit" value="Suivant"/>
+			<input type="submit" value="Suivant" onClick="unhook()"/>
 		</form>
 	</main>
 	<?php 
@@ -131,11 +131,16 @@ check['enfants'] = function(id) {
 })();
 	
 </script>
-	<script type="text/javascript"> 
-    window.addEventListener('beforeunload', function(e){ 
-        e.preventDefault(); 
-        e.returnValue = '';
-    }); 
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if (hook) { 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
 </script>
 </body>
 </html>

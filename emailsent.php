@@ -13,7 +13,7 @@
 	session_start();
 	if (isset($_SESSION["email"])){
 	?>
-	
+<body>	
 	<header>
 		<h1><a href="index.php">calculermonevenement.fr</a></h1>
 		<h2>En moins de 5 minutes </h2>
@@ -29,13 +29,23 @@
 			sendingEmail($email, $name); ?>
 			<h1>Un email vient de vous être envoyé à l'adresse<br><br>
 			<?php echo $_SESSION["email"]; ?></h1>
-			<a href="emailsent.php"><button>Renvoyer l'email</button></a>
+			<a href="emailsent.php" onClick="unhook()"><button>Renvoyer l'email</button></a>
 		</div>
 	</main>
 	<?php 
 	}else{
 		header("Location: form.php");
 	}?>
-<body>
 </body>
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if (hook) { 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
+</script>
 </html>

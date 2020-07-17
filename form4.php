@@ -96,7 +96,7 @@ history.forward()
 						<br>
 					</div>
 				</main>
-				<input type="submit" value="Suivant"/>
+				<input type="submit" value="Suivant" onClick="unhook()"/>
 			</form>
 
 	</main>
@@ -108,11 +108,16 @@ history.forward()
 	}else{
 		header("Location: form.php");
 	}?>
-<script type="text/javascript"> 
-    window.addEventListener('beforeunload', function(e){ 
-        e.preventDefault(); 
-        e.returnValue = '';
-    }); 
+<script type="text/javascript">
+  var hook=true;
+  window.onbeforeunload = function() {
+    if (hook) { 
+      return "Did you save your stuff?" 
+    }
+  }
+  function unhook() {
+     hook=false;
+  }
 </script>
 </body>
 </html>
