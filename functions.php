@@ -145,5 +145,19 @@
 		$people = $adults + $children;
 		return $people;
 	}
+
+	function addNoPckageToNull(){
+		global $db;
+			$addNoPckageToNull = $db->prepare('INSERT INTO package(journee_detude, demijournee_detude, seminaire_residentiel, seminaire_semiresidentiel, event_id, no_package) VALUES (:journee_detude, :demijournee_detude, :seminaire_residentiel, :seminaire_semiresidentiel, :event_id, :no_package)');
+			$addNoPckageToNull->execute(array(
+				'journee_detude'=>0,
+				'demijournee_detude'=>0,
+				'seminaire_residentiel'=>0,
+				'seminaire_semiresidentiel'=>0,
+				'event_id'=>$_SESSION["event_id"],
+				'no_package'=>0
+			));
+			$addNoPckageToNull->closeCursor();
+	}
 		
 ?>

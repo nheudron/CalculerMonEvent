@@ -34,8 +34,7 @@ if($dataEvent["no_package"] == 1){
 	
 	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel;
 	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel;
-	echo $finalPriceLow;
-}else{
-	echo'coucou';
+}else{ //if no_package == 0
+	
 }
 ?>

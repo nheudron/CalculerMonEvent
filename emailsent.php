@@ -11,6 +11,11 @@
 	session_start();
 	include("db_connexion.php");
 	include("definePrices.php");
+	
+	if($finalPriceLow ==  null){
+		$finalPriceLow = 'Veuillez cliquer sur le lien suivant : <a href="http://coach-evenements.alwaysdata.net/form3.php">lien</a>';
+	}
+	
 	include("emailsendingProcess.php");
 	
 	if (isset($_SESSION["email"])){

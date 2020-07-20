@@ -12,16 +12,18 @@ history.forward()
 </head>
 	
 	<?php 
+	session_start();
 	include("db_connexion.php");
 	include("functions.php");
 	$people = people();
 	$duration = duration() + 1;
-	session_start();
+	addNoPckageToNull();
 	if (isset($_SESSION["email"])){
 		if(isset($_SESSION["event_id"])) {
+			if(isset($_SESSION["package_id"])) {
 	
-			$duree  = duration();
-			$people = people();
+				$duree  = duration();
+				$people = people();
 	?>
 <body>	
 	<header>
@@ -115,6 +117,9 @@ history.forward()
 	</main>
 	
 	<?php 
+					}else{
+					header("Location: form3.php");
+				}	
 			}else{
 				header("Location: form2.php");
 			}	
