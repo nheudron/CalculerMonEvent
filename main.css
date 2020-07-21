@@ -19,6 +19,11 @@ h1 {
 	font: inherit;
 	font-size: 1.5em;
 }
+@media screen and (max-width: 640px) {
+  h1 {
+		font-size: 0.8em;
+	}
+}
 h2 {
 	font-size: 1.5em;
 	line-height: 1.75em;
@@ -101,6 +106,40 @@ input[type=radio] {
 	width: 13px!important;
 	margin: 15px;
 }
+input[type=submit]{
+	position:fixed;
+	bottom: 50px;
+	right: 50px;
+}
+.submitBackground{
+	display: none;
+}
+.submitBackgroundBackground{
+	display: none;
+}
+@media screen and (max-width: 640px) {
+	input[type=submit]{
+		position:fixed;
+		bottom: 10px;
+		right: 50px;
+		z-index: 2;
+	}
+	.submitBackground{
+		background-color: aliceblue;
+		width: 100%;
+		position: fixed;
+		display: block;
+		bottom: 0;
+		height: 100px;
+		z-index: 1;
+		box-shadow: 0 10px 12px 1px black;
+	}
+	.submitBackgroundBackground{
+		height: 150px;
+		width: 100%;
+		display: block;
+	}
+}
 .note{
 	color: gray;
 	font-style: italic;
@@ -117,13 +156,23 @@ header h1{
 	top: 50px;
 	text-shadow: 1px 1px 10px white;
 }
+@media screen and (max-width: 640px) {
+  header h1 {
+		font-size: 20px;
+	}
+}
 header h2{
 	position: absolute;
 	text-align: center;
-	margin: auto;
-	width: 100%;
+	width: 90%;
 	top: 100px;
 	text-shadow: 1px 1px 10px white;
+}
+@media screen and (max-width: 640px) {
+  header h2 {
+		width: 100%;
+	  font-size: 20px;
+	}
 }
 .imghead{
 	width: 100%;
@@ -131,17 +180,28 @@ header h2{
 	overflow: hidden;
 	z-index: -10;
 }
+@media screen and (max-width: 640px) {
+	.imghead{
+		height: 170px;
+	}
+}
 /* index -------------------------------------------------------------*/
 .home{
 	text-align: center;
 }
-
 .home > h1{
 	margin: 50px auto auto;
 	padding: 10px;
 	width: 400px;
 	font-size: 25px;
 	font-weight: 300;
+}
+@media screen and (max-width: 640px) {
+	.home > h1{
+		width: 80%;
+		font-size: 20px;
+		font-weight: 200;
+	}
 }
 .home button{
 	margin-top: 50px;
@@ -153,9 +213,21 @@ footer{
 	margin-top: 230px;
 	width: 100%;
 }
+@media screen and (max-width: 640px) {
+	footer{
+		margin-top: 30px;
+	}
+}
 footer div{
 	width: 100%;
 	text-align: center;
+}
+@media screen and (max-width: 640px) {
+	footer > div > a{
+		font-size: 15px;
+		font-weight: lighter;
+		line-height: 10px;
+	}
 }
 /* form general -------------------------------------------------------------*/
 .formType > main{

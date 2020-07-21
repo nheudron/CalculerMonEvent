@@ -24,7 +24,6 @@
 		$data = $result3->fetch();
 		$_SESSION["email"] = $_POST["email"];
 		$_SESSION["user_id"] = $data["id"];
-		$result3->closeCursor();
 	}
 	function addOption(){
 		
@@ -100,28 +99,68 @@
 		}else{
 			$covid = 1;
 		}
-		if(empty($_POST["accomodation"]) || $_POST["accomodation"]="null"){
-			$accomodation = null;
-		}else{
-			$accomodation = $_POST["accomodation"];
-		}
-		if(empty($_POST["transport"])  || $_POST["transport"]="null"){
+	
+		if(empty($_POST["transport"])  || $_POST["transport"]=="null"){
 			$transport = null;
 		}else{
 			$transport = $_POST["transport"];
 		}
 
-		$resultOptionPackage = $db->prepare('INSERT INTO logistics(event_id, home_agents, security_agents, badges, covid, accomodation, transport) VALUES (:event_id, :home_agents, :security_agents, :badges, :covid, :accomodation, :transport)');
+		$resultOptionPackage = $db->prepare('INSERT INTO logistics(event_id, home_agents, security_agents, badges, covid, transport) VALUES (:event_id, :home_agents, :security_agents, :badges, :covid, :transport)');
 		$resultOptionPackage->execute(array(
 			'event_id'=>$_SESSION["event_id"],
 			'home_agents'=>$home_agents,
 			'security_agents'=>$security_agents,
 			'badges'=>$badges,
 			'covid'=>$covid,
-			'accomodation'=>$accomodation,
 			'transport'=>$transport
 		));
 		$resultOptionPackage->closeCursor();
+		
+		if(empty($_POST["single2"])){
+			$single2 = 0;
+		}else{
+			$single2 = $_POST["single2"];
+		}
+		if(empty($_POST["single3"])){
+			$single3 = 0;
+		}else{
+			$single3 = $_POST["single3"];
+		}
+		if(empty($_POST["single24"])){
+			$single4 = 0;
+		}else{
+			$single24 = $_POST["single24"];
+		}
+		if(empty($_POST["double2"])){
+			$double2 = 0;
+		}else{
+			$double2 = $_POST["double2"];
+		}
+		if(empty($_POST["double3"])){
+			$double3 = 0;
+		}else{
+			$double3 = $_POST["double3"];
+		}
+		if(empty($_POST["double4"])){
+			$double4 = 0;
+		}else{
+			$double4 = $_POST["double4"];
+		}
+		
+		$resultAccomodation = $db->prepare('INSERT INTO accomodation(event_id, double4, double3, double2, single4, single3, single2) VALUES (:event_id, :double4, :double3, :double2, :single4, :single3, :single2)');
+		$resultAccomodation->execute(array(
+			'event_id'=>$_SESSION["event_id"],
+			'double4'=>$double4,
+			'double3'=>$double3,
+			'double2'=>$double2,
+			'single4'=>$single4,
+			'single3'=>$single3,
+			'single2'=>$single2
+			
+		));
+		$resultAccomodation->closeCursor();
+		
 	}
 	
 	function duration(){
@@ -159,5 +198,20 @@
 			));
 			$addNoPckageToNull->closeCursor();
 	}
+
+	function enleveaccents($chaine){
+		
+			$string = strtr($chaine, $arr = array(
+			"é" => "&#233;",
+			"è" => "&#232;",
+			"à" => "&#224;",
+			"ù" => "&#249;")
+						  );
+
+		
+         return $string;
+    }
+
+;
 		
 ?>

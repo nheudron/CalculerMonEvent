@@ -25,9 +25,9 @@
 	</main>
 	
 	<footer>
-		<div>element1</div>
-		<div>element2</div>
-		<div>element3</div>
+		<div><a href="cgu.php">Conditions générales d'utilisation</a></div>
+		<div><a href="https://www.coach-evenements.com/">Coach-événements</a></div>
+		<div></div>
 	</footer>
 </body>
 </html>

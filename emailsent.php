@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
@@ -12,8 +13,15 @@
 	include("db_connexion.php");
 	include("definePrices.php");
 	
+	$resultType = $db->prepare('SELECT * FROM event WHERE id = ?');
+	$resultType->execute(array($_SESSION["event_id"]));
+	$dataType = $resultType->fetch();
+	$typeEvent = enleveaccents($dataType['type']);
+	
 	if($finalPriceLow ==  null){
-		$finalPriceLow = 'Veuillez cliquer sur le lien suivant : <a href="http://coach-evenements.alwaysdata.net/form3.php">lien</a>';
+		$warningMessage = enleveaccents('Veuillez cliquer sur le lien suivant pour recevoir une estimation budgétaire : <br /><a href="http://coach-evenements.alwaysdata.net/form3.php">Définir les besoins de son événements</a>');
+	}else{
+		$warningMessage = 'Estimation budg&eacute;taire pour votre '. $typeEvent.' accueillant '.$people.' personnes sur une dur&eacute;e de '.$duration.' jours.';
 	}
 	
 	include("emailsendingProcess.php");
@@ -33,8 +41,13 @@
 			$email = $_SESSION["email"];
 			$name = $_SESSION["email"];
 			
-			sendingEmail($email, $name); ?>
-			<h1>Un email vient de vous être envoyé à l'adresse<br><br>
+			global $finalPriceLow, $finalPriceHigh, $warningMessage;
+		
+			echo 'tranport : '.$transportPriceLow.'<br>'.$dataLogistics['transport'].'<br>';
+			echo $finalPriceLow.'<br>';
+			echo $finalPriceHigh;
+			#sendingEmail($email, $name); ?>
+			<h1>adresse de réception :<br><br>
 			<?php echo $_SESSION["email"]; ?></h1>
 			<a href="emailsent.php" onClick="unhook()"><button>Renvoyer l'email</button></a>
 		</div>
@@ -44,15 +57,4 @@
 		header("Location: form.php");
 	}?>
 </body>
-<script type="text/javascript">
-  var hook=true;
-  window.onbeforeunload = function() {
-    if (hook) { 
-      return "Did you save your stuff?" 
-    }
-  }
-  function unhook() {
-     hook=false;
-  }
-</script>
 </html>

@@ -23,8 +23,6 @@
 			<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone"><br>
 			<p class="note">* champs obligatoires</p>
 			<input type="submit" value="Suivant" onClick="unhook()"/>
-			<div class="submitBackground"></div>
-			<div class="submitBackgroundBackground"></div>
 		</form>
 	</main>
 	

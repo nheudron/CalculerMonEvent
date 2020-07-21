@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
@@ -24,21 +25,22 @@ history.forward()
 	<main>
 		<form id="formEvent" style="formColumn" method="post" action="form2Process.php">
 			<h3>Dates</h3>
-			<label for="du">du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required>
-			<label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required><br>
+			<label for="du">du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required class="incorrect" >
+			<script>    $.datepicker.setDefaults($.datepicker.regional['fr']);</script>
+			<label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required class="incorrect"><br>
 			<h3>Nombre de personnes</h3>
 			<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required>
 			<label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
 			<label for="lieu">Lieu</label><br>
-			<select name="place" id="lieu" class="correct">
-				<option value="" disabled>Sélectionnez une option</option>
+			<select name="place" id="lieu" class="incorrect" required>
+				<option value="" disabled selected="selected">Sélectionnez une option</option>
 				<option value="Ile de France">Ile de France</option>
 				<option value="Grandes Villes">Grandes Villes</option>
 				<option value="Province">Province</option>
 			</select><br><br>
 			<label for="type">Type d'événement</label><br>
-			<select name="type" id="type" class="correct">
-				<option value="" disabled>Sélectionnez une option</option>
+			<select name="type" id="type" required>
+				<option value="" disabled selected="selected" >Sélectionnez une option</option>
 				<option value="Séminaire">Séminaire</option>
 				<option value="Gala">Gala</option>
 				<option value="Gala">Conférence</option>
@@ -57,23 +59,20 @@ var check = {};
 	
 check['du'] = function(id) {
     var name = document.getElementById(id);
-    if (/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}/) {
-        name.className = 'correct';
+    if (/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/){
+		name.className = 'correct';
         return true;
     }else{
-        name.className = 'incorrect';
+		name.className = 'incorrect';
         return false;
-    }
+	}
 };
 
 check['au'] = function(id) {
     var name = document.getElementById(id);
-	if (/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}/) {
+    if (name.value != "0000-00-00") {
         name.className = 'correct';
         return true;
-    }else{
-        name.className = 'incorrect';
-        return false;
     }
 };
 	
@@ -102,10 +101,33 @@ check['enfants'] = function(id) {
     }
 };
 
+check['lieu'] = function(id) {
+	var name = document.getElementById(id);
+
+    if (isset(name.value)) {
+        name.className = 'correct';
+        return true;
+    } else {
+        name.className = 'input';
+        return true;
+    }
+};
+check['type'] = function(id) {
+	var name = document.getElementById(id);
+
+    if (isset(name.value)) {
+        name.className = 'correct';
+        return true;
+    } else {
+        name.className = 'input';
+        return true;
+    }
+};
+
 (function() { 
 
     var myForm = document.getElementById('formEvent'),
-        inputs = document.querySelectorAll('input[type=date], input[type=number]'),
+        inputs = document.querySelectorAll('input[type=date], input[type=number], select'),
         inputsLength = inputs.length;
 
     for (var i = 0; i < inputsLength; i++) {

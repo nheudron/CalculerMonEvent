@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 	<script src="https://kit.fontawesome.com/10a40eb87c.js" crossorigin="anonymous"></script>
@@ -75,19 +76,19 @@ history.forward()
 						<header><h3>Hébergement</h3></header>
 						<p class="note"> <?php echo $duree ?> nuit pour <?php echo $people ?> personnes en<br>chambre d'hôtel B&B</p>
 						<main>
-							<span><input type="radio" name="accomodation" id="single2" value="single2"><label for="single2"> &nbsp;Single (2<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="single3" value="single3"><label for="single3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="single4" value="single4"><label for="single4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="double2" value="double2"><label for="double2"> &nbsp;Double (2<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="double3" value="double3"><label for="double3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="double4" value="double4"><label for="double4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label></span>
-							<span><input type="radio" name="accomodation" id="none" value=null><label for="none"> &nbsp;Aucun</label></span>
+							<span><input type="number" id="single2" name="single2"><label for="single2"> &nbsp;Single (2<i class="fas fa-star"></i>)</label></span>
+							<span><input type="number" id="single3" name="single3"><label for="single3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label></span>
+							<span><input type="number" id="single4" name="single4"><label for="single4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label></span>
+							<span><input type="number" id="double2" name="double2"><label for="double2"> &nbsp;Double (2<i class="fas fa-star"></i>)</label></span>
+							<span><input type="number" id="double3" name="double3"><label for="double3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label></span>
+							<span><input type="number" id="double4" name="double4"><label for="double4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label></span>
+							<span><input type="number" id="none" value=null><label for="none"> &nbsp;Aucun</label></span>
 						</main>
-						<br>
+						<p class="note"> Le total doit être égal à <?php echo $people ?>, sinon, vous ne prévoyez pas de logement pour certaines personnes. </p>
 					</div>
 					<div>
 						<header><h3>Transport</h3></header>
-						<p class="note">pour <?php echo $people ?> personnes</p>
+						<p class="note">pour <?php echo $people ?> personnes (aller-retour)</p>
 						<main>
 							<span><input type="radio" name="transport" id="taxi" value="taxi"><label for="taxi"> &nbsp;Taxi</label></span>
 							<span><input type="radio" name="transport" id="bus" value="bus"><label for="bus"> &nbsp;Bus</label></span>
