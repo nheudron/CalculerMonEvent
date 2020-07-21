@@ -3,6 +3,7 @@ session_start();
 include("functions.php");
 
 $duration = duration() + 1;
+$night = duration();
 $people = people();
 
 $resultEvent = $db->prepare('SELECT * FROM package WHERE event_id = ?');
@@ -24,6 +25,10 @@ $dataTechnical = $resultTechnical->fetch();
 $resultNo_package = $db->prepare('SELECT * FROM no_package WHERE event_id = ?');
 $resultNo_package->execute(array($_SESSION["event_id"]));
 $dataNo_package = $resultNo_package->fetch();
+
+$resultAccomodation = $db->prepare('SELECT * FROM accomodation WHERE event_id = ?');
+$resultAccomodation->execute(array($_SESSION["event_id"]));
+$dataAccomodation = $resultAccomodation->fetch();
 
 $journee_detude = array('low' => '55','high' => '90');
 $demijournee_detude = array('low' => '40','high' => '65');
@@ -88,13 +93,18 @@ if($dataEvent["no_package"] == 1){
 		$transportPriceLow = $covoitPrice['low'];
 		$transportPriceHigh = $covoitPrice['high'];
 	}
-	
 	$transportPriceLow = $transportPriceLow * $people;
 	$transportPriceHigh = $transportPriceHigh * $people;
 	
-	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel + $transportPriceLow;
+	$accomodationPriceLow = $single2Price['low']*$dataAccomodation['single2'] + $single3Price['low']*$dataAccomodation['single3'] + $single4Price['low']*$dataAccomodation['single4'] + $double2Price['low']*$dataAccomodation['double2'] + $double3Price['low']*$dataAccomodation['double3'] + $double4Price['low']*$dataAccomodation['double4'];
+	$accomodationPricehigh = ($single2Price['high']*$dataAccomodation['single2'] + $single3Price['high']*$dataAccomodation['single3'] + $single4Price['high']*$dataAccomodation['single4'] + $double2Price['high']*$dataAccomodation['double2'] + $double3Price['high']*$dataAccomodation['double3'] + $double4Price['high']*$dataAccomodation['double4'])*($duration-1);
+	$accomodationPriceLow = $accomodationPriceLow;
+	$accomodationPricehigh = $accomodationPricehigh * $night;
 	
-	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh;
+	
+	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel + $transportPriceLow + $accomodationPriceLow;
+	
+	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh + $accomodationPriceHigh;
 }else{ //if no_package == 0
 	$finalPriceLow = 0;
 	$finalPriceHigh = 0;

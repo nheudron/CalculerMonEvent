@@ -32,7 +32,7 @@ history.forward()
 			<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required>
 			<label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
 			<label for="lieu">Lieu</label><br>
-			<select name="place" id="lieu" class="incorrect" required>
+			<select name="place" id="lieu" required>
 				<option value="" disabled selected="selected">Sélectionnez une option</option>
 				<option value="Ile de France">Ile de France</option>
 				<option value="Grandes Villes">Grandes Villes</option>

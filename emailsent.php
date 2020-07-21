@@ -43,7 +43,7 @@
 			
 			global $finalPriceLow, $finalPriceHigh, $warningMessage;
 		
-			echo 'tranport : '.$transportPriceLow.'<br>'.$dataLogistics['transport'].'<br>';
+			echo 'hotel bas : '.$accomodationPriceLow .'<br>'.$night.'<br>';
 			echo $finalPriceLow.'<br>';
 			echo $finalPriceHigh;
 			#sendingEmail($email, $name); ?>
