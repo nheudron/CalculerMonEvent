@@ -59,6 +59,7 @@
 				<div> <i class="far fa-check-circle"></i>
 					<p>fin</p>
 				</div>
+				<a href="emailsent.php" onClick="unhook()"><button>Renvoyer l'email</button></a>
 			</div>
 		</section>
 
@@ -68,16 +69,18 @@
 				$email = $_SESSION["email"];
 				$name = $_SESSION["email"];
 
-				global $finalPriceLow, $finalPriceHigh, $warningMessage;
-
-				echo 'hotel bas : '.$accomodationPriceLow .'<br>'.$night.'<br>';
-				echo $finalPriceLow.'<br>';
-				echo $finalPriceHigh;
+				echo 'animation bas : '.$animationPriceLow .' et haut : '.$animationPriceHigh.'<br>';
+				echo 'technique bas : '.$technicPriceLow .' et haut : '.$technicPriceHigh.'<br>';
+				echo 'logistique bas : '.$logisticLow .' et haut : '.$logisticHigh.'<br>';
+				echo 'transport bas : '.$transportPriceLow .' et haut : '.$transportPriceHigh.'<br>';
+				echo 'Hébergement bas : '.$accomodationPriceLow .' et haut : '.$accomodationPriceHigh.'<br>';
+				echo 'final bas : '.$finalPriceLow .' et haut : '.$finalPriceHigh.'<br>';
+	
 				#sendingEmail($email, $name); ?>
 				<h1>adresse de réception :<br><br>
 				<?php echo $_SESSION["email"]; ?></h1>
-				<a href="emailsent.php" onClick="unhook()"><button>Renvoyer l'email</button></a>
 			</div>
+			<div class="submitBackgroundBackground"></div>
 		</main>
 	</div>
 	<?php 

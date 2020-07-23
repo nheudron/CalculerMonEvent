@@ -42,7 +42,7 @@
 		</section>
 		
 		<h3>Dates</h3>
-		<label for="du" >du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required class="compulsory" >
+		<label for="du" >du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required class="compulsory" ><br>
 		<script> $.datepicker.setDefaults($.datepicker.regional['fr']);</script>
 		<label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required class="compulsory"><br>
 		<h3>Nombre de personnes</h3>

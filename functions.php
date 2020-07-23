@@ -54,6 +54,44 @@
 		));
 		$resultOptionPackage->closeCursor();
 		
+		if(empty($_POST["taxi"])){
+			$taxi = 0;
+		}else{
+			$taxi = $_POST["taxi"];
+		}
+		if(empty($_POST["bus"])){
+			$bus = 0;
+		}else{
+			$bus = $_POST["bus"];
+		}
+		if(empty($_POST["train"])){
+			$train = 0;
+		}else{
+			$train = $_POST["train"];
+		}
+		if(empty($_POST["plane"])){
+			$plane = 0;
+		}else{
+			$plane = $_POST["plane"];
+		}
+		if(empty($_POST["covoit"])){
+			$covoit = 0;
+		}else{
+			$covoit = $_POST["covoit"];
+		}
+
+		
+		$resultOptionPackage = $db->prepare('INSERT INTO transport(event_id, taxi, bus, train, plane, covoit) VALUES (:event_id, :taxi, :bus, :train, :plane, :covoit)');
+		$resultOptionPackage->execute(array(
+			'event_id'=>$_SESSION["event_id"],
+			'taxi'=>$taxi,
+			'bus'=>$bus,
+			'train'=>$train,
+			'plane'=>$plane,
+			'covoit'=>$covoit
+		));
+		$resultOptionPackage->closeCursor();
+		
 		if(empty($_POST["video"])){
 			$video = 0;
 		}else{
@@ -99,21 +137,14 @@
 		}else{
 			$covid = 1;
 		}
-	
-		if(empty($_POST["transport"])  || $_POST["transport"]=="null"){
-			$transport = null;
-		}else{
-			$transport = $_POST["transport"];
-		}
 
-		$resultOptionPackage = $db->prepare('INSERT INTO logistics(event_id, home_agents, security_agents, badges, covid, transport) VALUES (:event_id, :home_agents, :security_agents, :badges, :covid, :transport)');
+		$resultOptionPackage = $db->prepare('INSERT INTO logistics(event_id, home_agents, security_agents, badges, covid) VALUES (:event_id, :home_agents, :security_agents, :badges, :covid)');
 		$resultOptionPackage->execute(array(
 			'event_id'=>$_SESSION["event_id"],
 			'home_agents'=>$home_agents,
 			'security_agents'=>$security_agents,
 			'badges'=>$badges,
-			'covid'=>$covid,
-			'transport'=>$transport
+			'covid'=>$covid
 		));
 		$resultOptionPackage->closeCursor();
 		

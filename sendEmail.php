@@ -43,6 +43,7 @@
 				<div> <i class="fas fa-circle"></i>
 					<p>fin</p>
 				</div>
+				<a href="emailsent.php" onClick="unhook()"><button>Envoyer l'email</button></a>
 			</div>
 		</section>
 
@@ -50,8 +51,8 @@
 			<div class="home">
 				<h1>L'estimation budgétaire sera envoyée à l'adresse : <br><br>
 				<?php echo $_SESSION["email"]; ?></h1>
-				<a href="emailsent.php" onClick="unhook()"><button>Envoyer l'email</button></a>
 			</div>
+			<div class="submitBackgroundBackground"></div>
 		</main>
 		</div>
 	<?php 

@@ -206,7 +206,8 @@
 						<h3>Transport</h3>
 					</header>
 					<p class="note">Définissez le nombre d'allers-retours pour <?php echo $people ?> personnes.</p>
-					<main> <span>
+					<main> 
+						<span>
 						<input type="number" name="taxi" id="taxi" value="taxi">
 						<label for="taxi"> &nbsp;Taxi</label>
 						</span> <span>
@@ -219,9 +220,13 @@
 						<input type="number" name="plane" id="plane" value="plane">
 						<label for="plane"> &nbsp;Avion</label>
 						</span> <span>
-						<input type="number" name="perso" id="perso" value=null>
+						<input type="number" name="covoit" id="covoit" value="covoit">
+						<label for="covoit"> &nbsp;Co-voiturage</label>
+						</span> <span>
+						<input type="number" name="perso" id="perso" value="perso">
 						<label for="perso"> &nbsp;Moyen personnel</label>
-						</span> </main>
+						</span> 
+					</main>
 				</div>
 				</span>
 				<div>
