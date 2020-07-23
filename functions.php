@@ -30,17 +30,17 @@
 		if(empty($_POST["conferencier"])){
 			$conferencier = 0;
 		}else{
-			$conferencier = 1;
+			$conferencier = $_POST["conferencier"];
 		}
 		if(empty($_POST["gala"])){
 			$gala = 0;
 		}else{
-			$gala = 1;
+			$gala = $_POST["gala"];
 		}
 		if(empty($_POST["team_building"])){
 			$team_building = 0;
 		}else{
-			$team_building = 1;
+			$team_building = $_POST["team_building"];
 		}
 		
 		global $db;

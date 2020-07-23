@@ -15,14 +15,14 @@
 <file name="sendEmail.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399056626948522" remote="132398984400000000" Dst="2" />
 <file name="emailsent.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399057478140335" remote="132398985000000000" Dst="2" />
 <file name="emailsendingProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132397250402045394" remote="132397178400000000" Dst="2" />
-<file name="functions.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132398959008650456" remote="132398886600000000" Dst="2" />
+<file name="functions.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399832090513458" remote="132399759600000000" Dst="2" />
 <file name="updateProfile.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399047038275227" remote="132398974800000000" Dst="2" />
 <file name="updateProfileProcess.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132392995841519063" remote="132392923800000000" Dst="2" />
-<file name="form4.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399718706195222" remote="132399646200000000" Dst="2" />
+<file name="form4.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399827219024391" remote="132399754800000000" Dst="2" />
 <file name="form4Process.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132394632279654576" remote="132394560000000000" Dst="2" />
 <file name="form5Process.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132394482841336294" remote="132394410600000000" Dst="2" />
 <file name="form5.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399053972403553" remote="132398981400000000" Dst="2" />
-<file name="definePrices.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399715808938829" remote="132399643800000000" Dst="2" />
+<file name="definePrices.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399833115014575" remote="132399760800000000" Dst="2" />
 <file name="cgu.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132399702503926465" remote="132399630000000000" Dst="2" />
 <file name="test.php" server="ftp-coach-evenements.alwaysdata.net//www/" local="132398933902048969" remote="132398861400000000" Dst="2" />
 </dwsync>

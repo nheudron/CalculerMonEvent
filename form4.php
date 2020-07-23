@@ -151,16 +151,16 @@
 				<div>
 					<header>
 						<h3>Animation</h3>
-						<p class="note"> 1 animateur pour 1 soir</p>
+						<p class="note">Spécifiez le nombre d'animateurs.</p>
 					</header>
 					<main> <span>
-						<input type="checkbox" name="conferencier" id="conferencier">
+						<input type="number" name="conferencier" id="conferencier">
 						<label for="conferencier"> &nbsp;Conférencier</label>
 						</span> <span>
-						<input type="checkbox" name="gala" id="gala">
+						<input type="number" name="gala" id="gala">
 						<label for="gala"> &nbsp;gala</label>
 						</span> <span>
-						<input type="checkbox" name="team_building" id="team_building">
+						<input type="number" name="team_building" id="team_building">
 						<label for="team_building"> &nbsp;team_building</label>
 						</span> </main>
 					<br>
@@ -205,24 +205,23 @@
 					<header>
 						<h3>Transport</h3>
 					</header>
-					<p class="note">pour <?php echo $people ?> personnes (aller-retour)</p>
+					<p class="note">Définissez le nombre d'allers-retours pour <?php echo $people ?> personnes.</p>
 					<main> <span>
-						<input type="radio" name="transport" id="taxi" value="taxi">
+						<input type="number" name="taxi" id="taxi" value="taxi">
 						<label for="taxi"> &nbsp;Taxi</label>
 						</span> <span>
-						<input type="radio" name="transport" id="bus" value="bus">
+						<input type="number" name="bus" id="bus" value="bus">
 						<label for="bus"> &nbsp;Bus</label>
 						</span> <span>
-						<input type="radio" name="transport" id="train" value="train">
+						<input type="number" name="train" id="train" value="train">
 						<label for="train"> &nbsp;Train</label>
 						</span> <span>
-						<input type="radio" name="transport" id="plane" value="plane">
+						<input type="number" name="plane" id="plane" value="plane">
 						<label for="plane"> &nbsp;Avion</label>
 						</span> <span>
-						<input type="radio" name="transport" id="perso" value=null>
+						<input type="number" name="perso" id="perso" value=null>
 						<label for="perso"> &nbsp;Moyen personnel</label>
 						</span> </main>
-					<br>
 				</div>
 				</span>
 				<div>

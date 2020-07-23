@@ -110,6 +110,9 @@ if($dataEvent["no_package"] == 1){
 	$accomodationPriceLow = $accomodationPriceLow * $night;
 	$accomodationPricehigh = $accomodationPricehigh * $night;
 	
+	$animationPriceLow = $dataAnimation['gala'];
+	$animationPriceHigh = $dataAnimation['gala'];
+	
 	
 	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel + $transportPriceLow + $accomodationPriceLow + $logisticLow;
 	
