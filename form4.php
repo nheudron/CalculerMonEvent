@@ -151,6 +151,7 @@
 				<div>
 					<header>
 						<h3>Animation</h3>
+						<p class="note"> 1 animateur pour 1 soir</p>
 					</header>
 					<main> <span>
 						<input type="checkbox" name="conferencier" id="conferencier">

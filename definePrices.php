@@ -99,7 +99,7 @@ if($dataEvent["no_package"] == 1){
 	}
 	
 	$logisticLow = $dataLogistics['home_agents']*$duration*$agents['low'] + $dataLogistics['security_agents']*$duration*$security['low'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['low'];
-	$logistichigh = $dataLogistics['home_agents']*$duration*$agents['high'] + $dataLogistics['security_agents']*$duration*$security['high'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['high'];
+	$logisticHigh = $dataLogistics['home_agents']*$duration*$agents['high'] + $dataLogistics['security_agents']*$duration*$security['high'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['high'];
 
 	
 	$transportPriceLow = $transportPriceLow * $people;
@@ -111,9 +111,9 @@ if($dataEvent["no_package"] == 1){
 	$accomodationPricehigh = $accomodationPricehigh * $night;
 	
 	
-	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel + $transportPriceLow + $accomodationPriceLow;
+	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel + $transportPriceLow + $accomodationPriceLow + $logisticLow;
 	
-	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh + $accomodationPricehigh;
+	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh + $accomodationPricehigh + $logisticHigh;
 }else{ //if no_package == 0
 	$finalPriceLow = 1;
 	$finalPriceHigh = 2;
