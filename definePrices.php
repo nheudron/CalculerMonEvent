@@ -97,20 +97,25 @@ if($dataEvent["no_package"] == 1){
 		$transportPriceLow = $covoitPrice['low'];
 		$transportPriceHigh = $covoitPrice['high'];
 	}
+	
+	$logisticLow = $dataLogistics['home_agents']*$duration*$agents['low'] + $dataLogistics['security_agents']*$duration*$security['low'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['low'];
+	$logistichigh = $dataLogistics['home_agents']*$duration*$agents['high'] + $dataLogistics['security_agents']*$duration*$security['high'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['high'];
+
+	
 	$transportPriceLow = $transportPriceLow * $people;
 	$transportPriceHigh = $transportPriceHigh * $people;
 	
 	$accomodationPriceLow = $single2Price['low']*$dataAccomodation['single2'] + $single3Price['low']*$dataAccomodation['single3'] + $single4Price['low']*$dataAccomodation['single4'] + $double2Price['low']*$dataAccomodation['double2'] + $double3Price['low']*$dataAccomodation['double3'] + $double4Price['low']*$dataAccomodation['double4'];
-	$accomodationPricehigh = ($single2Price['high']*$dataAccomodation['single2'] + $single3Price['high']*$dataAccomodation['single3'] + $single4Price['high']*$dataAccomodation['single4'] + $double2Price['high']*$dataAccomodation['double2'] + $double3Price['high']*$dataAccomodation['double3'] + $double4Price['high']*$dataAccomodation['double4'])*($duration-1);
+	$accomodationPricehigh = ($single2Price['high']*$dataAccomodation['single2'] + $single3Price['high']*$dataAccomodation['single3'] + $single4Price['high']*$dataAccomodation['single4'] + $double2Price['high']*$dataAccomodation['double2'] + $double3Price['high']*$dataAccomodation['double3'] + $double4Price['high']*$dataAccomodation['double4']);
 	$accomodationPriceLow = $accomodationPriceLow * $night;
 	$accomodationPricehigh = $accomodationPricehigh * $night;
 	
 	
 	$finalPriceLow = $lowPrice_journee_detude + $lowPrice_demijournee_detude + $lowPrice_seminaire_residentiel + $lowPrice_seminaire_semiresidentiel + $transportPriceLow + $accomodationPriceLow;
 	
-	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh + $accomodationPriceHigh;
+	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh + $accomodationPricehigh;
 }else{ //if no_package == 0
-	$finalPriceLow = 0;
-	$finalPriceHigh = 0;
+	$finalPriceLow = 1;
+	$finalPriceHigh = 2;
 }
 ?>
