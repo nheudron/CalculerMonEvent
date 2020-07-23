@@ -212,6 +212,16 @@
          return $string;
     }
 
-;
+	function recallPackage(){
+		$resultPackage = $db->prepare('SELECT * FROM package WHERE event_id = ?');
+		$resultPackage->execute(array($_SESSION["event_id"]));
+		$dataPackage = $resultPackage->fetch();
 		
+		foreach($dataPackage as $package){
+			echo $dataPackage[i];
+		}
+			
+		
+	
+	}
 ?>

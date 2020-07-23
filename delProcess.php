@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="main.css">
-<title>Calculer mon Evenement</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Calculer mon Evenement</title>
 </head>
 	
 	

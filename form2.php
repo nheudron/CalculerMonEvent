@@ -1,54 +1,72 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="icon" type="image/png" href="/images/favicon.png" />
-<title>Calculer mon Evenement</title>
-<script LANGUAGE="JavaScript">
-history.forward()
-</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<title>Calculer mon Evenement</title>
+	<script src="https://kit.fontawesome.com/10a40eb87c.js" crossorigin="anonymous"></script>
+	<script LANGUAGE="JavaScript">
+	history.forward()
+	</script>
 </head>
-	
-	<?php include("db_connexion.php");
+<body>	
+	<?php 
 	session_start();
+	include("db_connexion.php");
+	
 	if (isset($_SESSION["email"])){
 	?>
-<body>	
+	
 	<header>
 		<h1>calculermonevenement.fr</h1>
 		<h2>En moins de 5 minutes</h2>
 		<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement" >
 	</header>
 	
-	<main>
-		<form id="formEvent" style="formColumn" method="post" action="form2Process.php">
-			<h3>Dates</h3>
-			<label for="du">du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required class="incorrect" >
-			<script>    $.datepicker.setDefaults($.datepicker.regional['fr']);</script>
-			<label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required class="incorrect"><br>
-			<h3>Nombre de personnes</h3>
-			<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required>
-			<label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
-			<label for="lieu">Lieu</label><br>
-			<select name="place" id="lieu" required>
-				<option value="" disabled selected="selected">Sélectionnez une option</option>
-				<option value="Ile de France">Ile de France</option>
-				<option value="Grandes Villes">Grandes Villes</option>
-				<option value="Province">Province</option>
-			</select><br><br>
-			<label for="type">Type d'événement</label><br>
-			<select name="type" id="type" required>
-				<option value="" disabled selected="selected" >Sélectionnez une option</option>
-				<option value="Séminaire">Séminaire</option>
-				<option value="Gala">Gala</option>
-				<option value="Gala">Conférence</option>
-				<option value="Convention">Convention</option>
-			</select><br><br>
-			<input type="submit" value="Suivant" onClick="unhook()"/>
-		</form>
-	</main>
+	<form id="formEvent" class="formUp" method="post" action="form2Process.php">
+		<section class="sticky">
+			<div class="submitBackground">
+				<div><i class="far fa-check-circle"></i><p>vous</p></div>
+					<i class="fas fa-long-arrow-alt-right"></i>
+					<div> <i class="fas fa-circle"></i><p style="right: 21px;">événement</p></div>
+					<i class="fas fa-long-arrow-alt-right"></i>
+					<div> <i class="far fa-circle"></i><p>forfait</p></div>
+					<i class="fas fa-long-arrow-alt-right"></i>
+					<div> <i class="far fa-circle"></i><p style="right: 6px;">options</p></div>
+					<i class="fas fa-long-arrow-alt-right"></i>
+					<div> <i class="far fa-circle"></i><p>fin</p></div>
+				<input id="button" type="submit" value="Suivant" onClick="unhook()"/>
+			</div>
+		</section>
+		
+		<h3>Dates</h3>
+		<label for="du" >du &nbsp;&nbsp;</label><input type="date" name="from" id="du" required class="compulsory" >
+		<script> $.datepicker.setDefaults($.datepicker.regional['fr']);</script>
+		<label for="au">&nbsp;&nbsp;au&nbsp;&nbsp;</label><input type="date" name="to" id="au" required class="compulsory"><br>
+		<h3>Nombre de personnes</h3>
+		<label for="adultes">Adultes &nbsp;&nbsp;</label><input type="number" name="adults" id="adultes" required class="compulsory">
+		<label for="enfants">&nbsp;&nbsp;Enfants&nbsp;&nbsp;</label><input type="number" name="children" id="enfants"><br><br>
+		<label for="lieu">Lieu</label><br>
+		<select name="place" id="lieu" required class="compulsory">
+			<option value="" disabled selected="selected">Sélectionnez une option</option>
+			<option value="Ile de France">Ile de France</option>
+			<option value="Grandes Villes">Grandes Villes</option>
+			<option value="Province">Province</option>
+		</select><br><br>
+		<label for="type">Type d'événement</label><br>
+		<select name="type" id="type" required class="compulsory">
+			<option value="" disabled selected="selected" >Sélectionnez une option</option>
+			<option value="Séminaire">Séminaire</option>
+			<option value="Gala">Gala</option>
+			<option value="Gala">Conférence</option>
+			<option value="Convention">Convention</option>
+		</select><br><br>
+	</form>
+	
+	<div class="submitBackgroundBackground"></div>
+	
 	<?php 
 	}else{
 		header("Location: form.php");

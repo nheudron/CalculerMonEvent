@@ -6,6 +6,10 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <title>Calculer mon Evenement</title>
+<script src="https://kit.fontawesome.com/10a40eb87c.js" crossorigin="anonymous"></script>
+<script LANGUAGE="JavaScript">
+history.forward()
+</script>
 </head>
 	<body>
 		<?php 
@@ -22,22 +26,38 @@
 				<h2>En moins de 5 minutes </h2>
 				<img src="images/Comment-est-calculé-le-rendement-des-livrets-réglementés copie.jpg" height="300px" class="imghead" alt="budget evenement">
 			</header>
-			<main>
-				<center><p> Vous disposez déjà d'un profile pour cette adresse email<br> 
-					avec les informations ci-dessous : </p>
-				<p class="note">Vous pouvez mettre à jour vos informations et cliquer sur suivant.</p></center>
-				<form id="formUser" style="formColumn" method="post" action="updateProfileProcess.php">
-					<label for="nom">Nom</label><br><input type="text" name="name" id="nom" value="<?php echo $dataProfile["name"];?>"><br>
-					<label for="prenom">Prénom</label><br><input type="text" name="surname" id="prenom" value="<?php echo $dataProfile["surname"];?>"><br>
-					<label for="entreprise">Société *</label><br><input type="text" name="company" id="entreprise" required value="<?php echo $dataProfile["company"];?>"><br>
-					<label for="email">email *</label><br><input type="email" name="email" id="email" required value="<?php echo $dataProfile["email"];?>"><br>
-					<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone" value="<?php echo $dataProfile["phone"];?>"><br>
-					<input type="hidden" name="user_id" id="user_id" value="<?php echo $dataProfile[id]; ?>">
-					<p class="note">* champs obligatoires</p>
+		
+		<form id="formUser" class="formUp" method="post" action="updateProfileProcess.php">
+			<section class="sticky">
+				<div class="submitBackground">
+					<div><i class="fas fa-circle"></i><p>vous</p></div>
+						<i class="fas fa-long-arrow-alt-right"></i>
+						<div> <i class="far fa-circle"></i><p style="right: 21px;">événement</p></div>
+						<i class="fas fa-long-arrow-alt-right"></i>
+						<div> <i class="far fa-circle"></i><p>forfait</p></div>
+						<i class="fas fa-long-arrow-alt-right"></i>
+						<div> <i class="far fa-circle"></i><p style="right: 6px;">options</p></div>
+						<i class="fas fa-long-arrow-alt-right"></i>
+						<div> <i class="far fa-circle"></i><p>fin</p></div>
 					<input type="submit" value="Suivant" onClick="unhook()"/>
+				</div>
+			</section>
+	
+			<center><p> Vous disposez déjà d'un profile pour cette adresse email<br> 
+				avec les informations ci-dessous : </p>
+			<p class="note">Vous pouvez mettre à jour vos informations et cliquer sur suivant.</p></center>
 
-				</form>
-			</main>
+			<label for="nom">Nom</label><br><input type="text" name="name" id="nom" value="<?php echo $dataProfile["name"];?>"><br>
+			<label for="prenom">Prénom</label><br><input type="text" name="surname" id="prenom" value="<?php echo $dataProfile["surname"];?>"><br>
+			<label for="entreprise">Société *</label><br><input type="text" name="company" id="entreprise" required value="<?php echo $dataProfile["company"];?>"><br>
+			<label for="email">email *</label><br><input type="email" name="email" id="email" required value="<?php echo $dataProfile["email"];?>"><br>
+			<label for="telephone">Téléphone</label><br><input type="tel" name="phone" id="telephone" value="<?php echo $dataProfile["phone"];?>"><br>
+			<input type="hidden" name="user_id" id="user_id" value="<?php echo $dataProfile[id]; ?>">
+			<p class="note">* champs obligatoires</p>
+
+		</form>
+
+		<div class="submitBackgroundBackground"></div>
 	<?php 
 			session_destroy();
 		}else{

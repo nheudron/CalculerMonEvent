@@ -6,6 +6,10 @@ $duration = duration() + 1;
 $night = duration();
 $people = people();
 
+if($night == 0){
+	$night = 1;
+}
+
 $resultEvent = $db->prepare('SELECT * FROM package WHERE event_id = ?');
 $resultEvent->execute(array($_SESSION["event_id"]));
 $dataEvent = $resultEvent->fetch();
@@ -98,7 +102,7 @@ if($dataEvent["no_package"] == 1){
 	
 	$accomodationPriceLow = $single2Price['low']*$dataAccomodation['single2'] + $single3Price['low']*$dataAccomodation['single3'] + $single4Price['low']*$dataAccomodation['single4'] + $double2Price['low']*$dataAccomodation['double2'] + $double3Price['low']*$dataAccomodation['double3'] + $double4Price['low']*$dataAccomodation['double4'];
 	$accomodationPricehigh = ($single2Price['high']*$dataAccomodation['single2'] + $single3Price['high']*$dataAccomodation['single3'] + $single4Price['high']*$dataAccomodation['single4'] + $double2Price['high']*$dataAccomodation['double2'] + $double3Price['high']*$dataAccomodation['double3'] + $double4Price['high']*$dataAccomodation['double4'])*($duration-1);
-	$accomodationPriceLow = $accomodationPriceLow;
+	$accomodationPriceLow = $accomodationPriceLow * $night;
 	$accomodationPricehigh = $accomodationPricehigh * $night;
 	
 	
