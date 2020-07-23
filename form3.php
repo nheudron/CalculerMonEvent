@@ -56,7 +56,7 @@
 			<h2>Forfaits les plus courants</h2>
 
 			<p class="note">Durée de l'événement : <?php echo $duration ?> jour(s)</p>
-
+			<p id="textAlert" style="color:red"></p>
 			<main>
 				<div>
 					<header>
@@ -128,10 +128,9 @@
 					<input type="number" name="seminaire_semiresidentiel" id="seminaire_semiresidentiel" min=0 value=0>
 					</span> </div>
 			</main>
-		</div>
+		</div><p class="note">Les forfaits ne vous conviennent pas ?<br>Sélectionnez : </p>
 	</form>
-	
-		<p id="textAlert" style="color:red"></p>
+		
 		<div class="without">
 			<p>Pas de forfait</p>
 			<a href="form5.php" onClick="unhook()">

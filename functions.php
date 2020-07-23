@@ -216,7 +216,7 @@
 		return $people;
 	}
 
-	function addNoPckageToNull(){
+	function addNoPackageToNull(){
 		global $db;
 			$addNoPckageToNull = $db->prepare('INSERT INTO package(journee_detude, demijournee_detude, seminaire_residentiel, seminaire_semiresidentiel, event_id, no_package) VALUES (:journee_detude, :demijournee_detude, :seminaire_residentiel, :seminaire_semiresidentiel, :event_id, :no_package)');
 			$addNoPckageToNull->execute(array(

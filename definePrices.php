@@ -99,7 +99,6 @@ if($dataEvent["no_package"] == 1){
 		$lowPrice_seminaire_semiresidentiel = $dataEvent["seminaire_semiresidentiel"] * $seminaire_semiresidentiel['low'] * $people;
 		$highPrice_seminaire_semiresidentiel = $dataEvent["seminaire_semiresidentiel"] * $seminaire_semiresidentiel['high'] * $people;
 	}
-	/* --------------------------sans forfait  ----------------------------------------------- */
 	
 	/* --------------------------animation ----------------------------------------------- */
 	$animationPriceLow = $dataAnimation['gala']*$galaPrice['low'] + $dataAnimation['conferencier']*$conferencierPrice['low'] + $dataAnimation['team_building']*$team_buildingPrice['low'];
@@ -128,7 +127,32 @@ if($dataEvent["no_package"] == 1){
 	$finalPriceHigh = $highPrice_journee_detude + $highPrice_demijournee_detude + $highPrice_seminaire_residentiel + $highPrice_seminaire_semiresidentiel + $transportPriceHigh + $accomodationPriceHigh + $logisticHigh + $animationPriceHigh + $technicPriceHigh;
 	
 }else{ //if no_package == 0 -----------------------------------------------------------------------------------------------------------
-	$finalPriceLow = 1;
-	$finalPriceHigh = 2;
+	/* --------------------------sans forfait  ----------------------------------------------- */
+	
+	/* --------------------------animation ----------------------------------------------- */
+	$animationPriceLow = $dataAnimation['gala']*$galaPrice['low'] + $dataAnimation['conferencier']*$conferencierPrice['low'] + $dataAnimation['team_building']*$team_buildingPrice['low'];
+	$animationPriceHigh = $dataAnimation['gala']*$galaPrice['high'] + $dataAnimation['conferencier']*$conferencierPrice['high'] + $dataAnimation['team_building']*$team_buildingPrice['high'];
+	/* --------------------------technique ----------------------------------------------- */
+	$technicPriceLow = 0;
+	
+	$technicPriceHigh = 0;
+	/* --------------------------logistique ----------------------------------------------- */
+	$logisticLow = $dataLogistics['home_agents']*$duration*$agents['low'] + $dataLogistics['security_agents']*$duration*$security['low'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['low'];
+	
+	$logisticHigh = $dataLogistics['home_agents']*$duration*$agents['high'] + $dataLogistics['security_agents']*$duration*$security['high'] + $dataLogistics['badges']*$badges['low']*$people + $dataLogistics['covid']*$duration*$covid['high'];
+	/* --------------------------transport ----------------------------------------------- */	
+	$transportPriceLow =  $trainPrice['low'] * $people * $dataTransport['train'] + $busPrice['low'] * $people * $dataTransport['bus'] + $taxiPrice['low'] * $people * $dataTransport['taxi'] + $plainPrice['low'] * $people * $dataTransport['plane'] + $covoitPrice['low'] * $people * $dataTransport['covoit'];
+	$transportPriceHigh = $trainPrice['high'] * $people * $dataTransport['train'] + $busPrice['high'] * $people * $dataTransport['bus'] + $taxiPrice['high'] * $people * $dataTransport['taxi'] + $plainPrice['high'] * $people * $dataTransport['plane'] + $covoitPrice['high'] * $people * $dataTransport['covoit'];;
+	/* --------------------------hébergement ----------------------------------------------- */
+	$accomodationPriceLow = $single2Price['low']*$dataAccomodation['single2'] + $single3Price['low']*$dataAccomodation['single3'] + $single4Price['low']*$dataAccomodation['single4'] + $double2Price['low']*$dataAccomodation['double2']/2 + $double3Price['low']*$dataAccomodation['double3']/2 + $double4Price['low']*$dataAccomodation['double4']/2;
+	$accomodationPriceHigh = $single2Price['high']*$dataAccomodation['single2'] + $single3Price['high']*$dataAccomodation['single3'] + $single4Price['high']*$dataAccomodation['single4'] + $double2Price['high']*$dataAccomodation['double2'] + $double3Price['high']*$dataAccomodation['double3'] + $double4Price['high']*$dataAccomodation['double4'];
+	
+	$accomodationPriceLow = $accomodationPriceLow * $night;
+	$accomodationPricehigh = $accomodationPricehigh * $night;
+
+	/* --------------------------somme finale ----------------------------------------------- */
+	$finalPriceLow = $transportPriceLow + $accomodationPriceLow + $logisticLow + $animationPriceLow + $technicPriceLow;
+	
+	$finalPriceHigh = $transportPriceHigh + $accomodationPriceHigh + $logisticHigh + $animationPriceHigh + $technicPriceHigh;
 }
 ?>

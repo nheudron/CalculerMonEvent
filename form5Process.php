@@ -6,8 +6,8 @@
 
 	if(isset($_SESSION["email"])) {
 		if(isset($_SESSION["event_id"])) {
-			addNoPackage();
 			addOption();
+			addNoPackage();
 			header("Location: sendEmail.php");
 		}else{
 			header("Location: form2.php");
@@ -17,6 +17,7 @@
 	}
 
 	function addNoPackage(){
+		global $db;
 			$resultNoPackage = $db->prepare('INSERT INTO no_package(event_id, rooms, lunch, diner, break) VALUES (:event_id, :rooms, :lunch, :diner, :break)');
 		$resultNoPackage->execute(array(
 			'event_id'=>$_SESSION["event_id"],

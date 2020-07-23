@@ -212,15 +212,11 @@ header h1{
 	top: 50px;
 	text-shadow: 1px 1px 10px white;
 }
-@media screen and (max-width: 380px) {
-  header h1 {
-		font-size: 18px;
-		top: 10px;
-	}
-}
 @media screen and (max-width: 640px) {
   header h1 {
 	  margin: 0;
+	  font-size: 18px;
+		top: 10px;
 	}
 	header > h2{
 		display: none;
@@ -326,7 +322,7 @@ footer div{
 	box-shadow: 0px 1px 10px 0.1px rgba(200,200,200,0.4);
 	width: 200px;
 	padding: 1px 2px 25px 5px;
-	transform: translateY(-108px);
+	transform: translateY(-90px);
 }
 #textAlert{
 	margin: 15px auto;
@@ -414,4 +410,11 @@ select{
 }
 .formNoPackage:firstChild(){
 	transform: translateY(-100px);
+}
+.wrapperBoxOptions{
+	width: 340px;
+	margin: 10px;
+}
+.wrapperBoxOptions > div{
+	margin: 10px 0;
 }

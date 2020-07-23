@@ -62,7 +62,7 @@
 				<input id="button" type="submit" value="Suivant" onClick="unhook()" for="formOptionPackage"/>
 			</div>
 		</section>
-		
+		<!--
 		<h2>Vous avez choisi</h2>
 
 		<div class='recall'>
@@ -144,121 +144,125 @@
 		<div id="scrollUp" class="add">
 			<h3>Ajouter une option <br>
 			<a href="#formOptionPackage"><i class="fas fa-arrow-down"></i></h3></a>
-		</div>
+		</div>-->
 		
 		<div class="formType">
-			<main> <span>
-				<div>
-					<header>
-						<h3>Animation</h3>
-						<p class="note">Spécifiez le nombre d'animateurs.</p>
-					</header>
-					<main> <span>
-						<input type="number" name="conferencier" id="conferencier">
-						<label for="conferencier"> &nbsp;Conférencier</label>
-						</span> <span>
-						<input type="number" name="gala" id="gala">
-						<label for="gala"> &nbsp;gala</label>
-						</span> <span>
-						<input type="number" name="team_building" id="team_building">
-						<label for="team_building"> &nbsp;team_building</label>
-						</span> </main>
-					<br>
-				</div>
-				<div>
-					<header>
-						<h3>Besoins techniques</h3>
-					</header>
-					<main> <span>
-						<input type="checkbox" name="video" id="video">
-						<label for="video"> &nbsp;Vidéo projection</label>
-						</span> <span>
-						<input type="checkbox" name="sound" id="sound">
-						<label for="sound"> &nbsp;Sonorisation/Micro</label>
-						</span> <span>
-						<input type="checkbox" name="light" id="light">
-						<label for="light"> &nbsp;Lumières</label>
-						</span> </main>
-					<br>
-				</div>
-				</span> <span>
-				<div>
-					<header>
-						<h3>Logistique</h3>
-					</header>
-					<main> <span>
-						<input type="checkbox" name="home_agents" id="home_agents">
-						<label for="home_agents"> &nbsp;Agents d'accueil</label>
-						</span> <span>
-						<input type="checkbox" name="security_agents" id="security_agents">
-						<label for="security_agents"> &nbsp;Agents de sécurité</label>
-						</span> <span>
-						<input type="checkbox" name="badges" id="badges">
-						<label for="badges"> &nbsp;badges</label>
-						</span> <span>
-						<input type="checkbox" name="covid" id="covid">
-						<label for="covid"> &nbsp;Procédure covid</label>
-						</span> </main>
-					<br>
-				</div>
-				<div>
-					<header>
-						<h3>Transport</h3>
-					</header>
-					<p class="note">Définissez le nombre d'allers-retours pour <?php echo $people ?> personnes.</p>
-					<main> 
-						<span>
-						<input type="number" name="taxi" id="taxi" value="taxi">
-						<label for="taxi"> &nbsp;Taxi</label>
-						</span> <span>
-						<input type="number" name="bus" id="bus" value="bus">
-						<label for="bus"> &nbsp;Bus</label>
-						</span> <span>
-						<input type="number" name="train" id="train" value="train">
-						<label for="train"> &nbsp;Train</label>
-						</span> <span>
-						<input type="number" name="plane" id="plane" value="plane">
-						<label for="plane"> &nbsp;Avion</label>
-						</span> <span>
-						<input type="number" name="covoit" id="covoit" value="covoit">
-						<label for="covoit"> &nbsp;Co-voiturage</label>
-						</span> <span>
-						<input type="number" name="perso" id="perso" value="perso">
-						<label for="perso"> &nbsp;Moyen personnel</label>
-						</span> 
-					</main>
-				</div>
+			<main>
+				<span class="wrapperBoxOptions">
+					<div>
+						<header>
+							<h3>Animation</h3>
+							<p class="note">Spécifiez le nombre d'animateurs.</p>
+						</header>
+						<main> <span>
+							<input type="number" name="conferencier" id="conferencier">
+							<label for="conferencier"> &nbsp;Conférencier</label>
+							</span> <span>
+							<input type="number" name="gala" id="gala">
+							<label for="gala"> &nbsp;gala</label>
+							</span> <span>
+							<input type="number" name="team_building" id="team_building">
+							<label for="team_building"> &nbsp;team_building</label>
+							</span> </main>
+						<br>
+					</div>
+					<div>
+						<header>
+							<h3>Besoins techniques</h3>
+						</header>
+						<main> <span>
+							<input type="checkbox" name="video" id="video">
+							<label for="video"> &nbsp;Vidéo projection</label>
+							</span> <span>
+							<input type="checkbox" name="sound" id="sound">
+							<label for="sound"> &nbsp;Sonorisation/Micro</label>
+							</span> <span>
+							<input type="checkbox" name="light" id="light">
+							<label for="light"> &nbsp;Lumières</label>
+							</span> </main>
+						<br>
+					</div>
 				</span>
-				<div>
-					<header>
-						<h3>Hébergement</h3>
-					</header>
-					<p class="note"> Indiquer le nombre de personnes à héberger pour <?php echo $night ?> nuit(s) en<br>
-						chambre d'hôtel B&B</p>
-					<main> <span>
-						<input type="number" id="single2" name="single2">
-						<label for="single2"> &nbsp;Single (2<i class="fas fa-star"></i>)</label>
-						</span> <span>
-						<input type="number" id="single3" name="single3">
-						<label for="single3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label>
-						</span> <span>
-						<input type="number" id="single4" name="single4">
-						<label for="single4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label>
-						</span> <span>
-						<input type="number" id="double2" name="double2">
-						<label for="double2"> &nbsp;Double (2<i class="fas fa-star"></i>)</label>
-						</span> <span>
-						<input type="number" id="double3" name="double3">
-						<label for="double3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label>
-						</span> <span>
-						<input type="number" id="double4" name="double4">
-						<label for="double4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label>
-						</span> <span>
-						<input type="number" id="none" value=null>
-						<label for="none"> &nbsp;Aucun</label>
-						</span> </main>
-					<p class="note"> Le total doit être égal à <?php echo $people ?>, sinon, vous ne prévoyez pas de logement pour certaines personnes. </p>
-				</div>
+				<span class="wrapperBoxOptions">
+					<div>
+						<header>
+							<h3>Logistique</h3>
+						</header>
+						<main> <span>
+							<input type="checkbox" name="home_agents" id="home_agents">
+							<label for="home_agents"> &nbsp;Agents d'accueil</label>
+							</span> <span>
+							<input type="checkbox" name="security_agents" id="security_agents">
+							<label for="security_agents"> &nbsp;Agents de sécurité</label>
+							</span> <span>
+							<input type="checkbox" name="badges" id="badges">
+							<label for="badges"> &nbsp;badges</label>
+							</span> <span>
+							<input type="checkbox" name="covid" id="covid">
+							<label for="covid"> &nbsp;Procédure covid</label>
+							</span> </main>
+						<br>
+					</div>
+					<div>
+						<header>
+							<h3>Transport</h3>
+						</header>
+						<p class="note">Définissez le nombre d'allers-retours pour <?php echo $people ?> personnes.</p>
+						<main> 
+							<span>
+							<input type="number" name="taxi" id="taxi" value="taxi">
+							<label for="taxi"> &nbsp;Taxi</label>
+							</span> <span>
+							<input type="number" name="bus" id="bus" value="bus">
+							<label for="bus"> &nbsp;Bus</label>
+							</span> <span>
+							<input type="number" name="train" id="train" value="train">
+							<label for="train"> &nbsp;Train</label>
+							</span> <span>
+							<input type="number" name="plane" id="plane" value="plane">
+							<label for="plane"> &nbsp;Avion</label>
+							</span> <span>
+							<input type="number" name="covoit" id="covoit" value="covoit">
+							<label for="covoit"> &nbsp;Co-voiturage</label>
+							</span> <span>
+							<input type="number" name="perso" id="perso" value="perso">
+							<label for="perso"> &nbsp;Moyen personnel</label>
+							</span> 
+						</main>
+					</div>
+				</span>
+				<span class="wrapperBoxOptions">
+					<div>
+						<header>
+							<h3>Hébergement</h3>
+						</header>
+						<p class="note"> Indiquer le nombre de personnes à héberger pour <?php echo $night ?> nuit(s) en<br>
+							chambre d'hôtel B&B</p>
+						<main> <span>
+							<input type="number" id="single2" name="single2">
+							<label for="single2"> &nbsp;Single (2<i class="fas fa-star"></i>)</label>
+							</span> <span>
+							<input type="number" id="single3" name="single3">
+							<label for="single3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label>
+							</span> <span>
+							<input type="number" id="single4" name="single4">
+							<label for="single4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label>
+							</span> <span>
+							<input type="number" id="double2" name="double2">
+							<label for="double2"> &nbsp;Double (2<i class="fas fa-star"></i>)</label>
+							</span> <span>
+							<input type="number" id="double3" name="double3">
+							<label for="double3"> &nbsp;Single (3<i class="fas fa-star"></i>)</label>
+							</span> <span>
+							<input type="number" id="double4" name="double4">
+							<label for="double4"> &nbsp;Single (4<i class="fas fa-star"></i>)</label>
+							</span> <span>
+							<input type="number" id="none" value=null>
+							<label for="none"> &nbsp;Aucun</label>
+							</span> </main>
+						<p class="note"> Le total doit être égal à <?php echo $people ?>, sinon, vous ne prévoyez pas de logement pour certaines personnes. </p>
+					</div>
+				</span>
 			</main>
 		</div>
 	</form>
